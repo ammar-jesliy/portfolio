@@ -1,7 +1,64 @@
-body {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+body {
     background-color: #101119;
+}
+
+.content {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 45px;
+}
+
+.header-logo {
+    width: calc(100% - 90px);
+    position: fixed;
+    top: 50px;
+    left: 45px;
+    margin-top: 50px;
+    transition: all 0.8s ease-in-out;
+}
+
+.header-logo-shrinked {
+    width: 150px;
+    position: fixed;
+    top: 50px;
+    left: 45px;
+    transition: all 0.6s ease-in-out;
+}
+
+header {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 300px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-link {
+    list-style-type: none;
+}
+
+.menu-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+.hero {
+    height: 100dvh;
 }
