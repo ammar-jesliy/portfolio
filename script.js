@@ -34,5 +34,4 @@ function toggleMenu() {
     } else {
       menuButton.innerHTML = "Menu";
     }
-  }
-  
+}
