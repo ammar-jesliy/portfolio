@@ -5,7 +5,7 @@ const navToggle = document.querySelector('.nav-toggle');
 
 window.addEventListener('scroll', function() {
     if (window.innerWidth >= 780) {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 10) {
             headerLogo.classList.remove("header-logo");
             headerLogo.classList.add("header-logo-shrinked");
         } else {
