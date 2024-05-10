@@ -10,6 +10,10 @@
     --bento-gap: 18px;
 }
 
+::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
 
 * {
     box-sizing: border-box;
@@ -44,14 +48,14 @@ body {
 .header-logo-shrinked {
     width: 150px;
     position: fixed;
-    top: 50px;
+    top: 40px;
     left: 48px;
     transition: all 0.4s ease-in-out;
 }
 
 header {
     position: fixed;
-    top: 50px;
+    top: 40px;
     right: 48px;
     width: 300px;
 }
@@ -85,7 +89,7 @@ svg {
 }
 
 .hero {
-    height: 100dvh;
+    height: 70dvh;
     padding: 0 3rem 2rem 3rem;
     display: flex;
     align-items: end;
@@ -192,8 +196,8 @@ svg {
 }
 
 .about-content {
-    max-height: 680px;
-    min-height: 65%;
+    max-height: 600px;
+    min-height: 50%;
     max-width: 1240px;
     margin: 0 auto;
     display: flex;
