@@ -216,8 +216,7 @@ svg {
 }
 
 .about-content {
-    max-height: 600px;
-    min-height: 50%;
+    max-height: 680px;
     max-width: var(--content-max-width);
     margin: 0 auto;
     display: flex;
@@ -450,8 +449,6 @@ svg {
     height: 100dvh;
     padding: 2rem 3rem 2rem 3rem;
     align-content: center;
-
-    
 }
 
 @media (max-width: 780px) {
@@ -463,12 +460,15 @@ svg {
 
 .portfolio-content {
     max-height: 680px;
-    min-height: 65%;
     max-width: var(--content-max-width);
     margin: 0 auto;
     display: flex;
     gap: var(--bento-gap);
     flex-wrap: wrap;
+
+    @media (max-width: 780px) {
+        max-height: none;
+    }
 }
 
 .portfolio-content .left-col, .portfolio-content .right-col {
@@ -499,25 +499,26 @@ svg {
     background-color: var(--clr-accent);
     border-radius: 38px;
     width: 100%;
-    height: 20%;
     align-items: center;
     justify-content: space-around;
-    padding-block: 24px;
+    padding-block: 12px;
     cursor: pointer;
+    margin-top: 100px;
 
     p {
         font-size: clamp(16px, 3vw, 32px);
         font-weight: 500;
     }
 
-    div {
+    .arrow {
         background-color: var(--clr-bg-bento-light);
         border-radius: 50%;
         padding: 15px;
+        margin: 10px;
     }
 
     img {
-        width: 25px;
+        width: clamp(12px, 1.5vw, 25px);
         transition: all 0.2s ease;
     }
 }
@@ -544,11 +545,15 @@ svg {
 
 .contact-content {
     max-height: 600px;
-    min-height: 75%;
     max-width: var(--content-max-width);
     margin: 0 auto;
     display: flex;
     gap: var(--bento-gap);
+
+    @media (max-width: 780px) {
+        flex-wrap: wrap;
+        max-height: none;
+    }
 }
 
 .contact-content > .left-col {
@@ -557,10 +562,29 @@ svg {
     display: flex;
     flex-direction: column;
     flex-basis: 40%;
+    padding: 3rem 2rem;
 
     img {
-        width: 150px;
+        width: 130px;
     }
+
+    h2 {
+        font-size: 54px;
+        font-weight: 700;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    p {
+        color: var(--clr-bg-bento-light);
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    @media (max-width: 780px) {
+        flex-basis: 100%;
+    }
+
 }
 
 .contact-content > .right-col {
@@ -568,6 +592,10 @@ svg {
     flex-direction: column;
     flex-basis: 60%;
     gap: var(--bento-gap);
+
+    @media (max-width: 780px) {
+        flex-basis: 100%;
+    }
 }
 
 .contact-content > .right-col > .row-1 {
@@ -575,6 +603,81 @@ svg {
     border-radius: var(--bento-border-radius);
     gap: var(--bento-gap);
     flex-basis: 75%;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h3 {
+        color: var(--clr-text-secondary);
+        font-size: 54px;
+        font-weight: 700;
+    }
+
+    .row-1 {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+
+        @media (max-width: 780px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .row-2 {
+        display: flex;
+        gap: 10px;
+
+        @media (max-width: 780px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .row-1 > [type="text"], input[type="email"] {
+        background-color: transparent;
+        border: 5px solid var(--clr-bg-bento-dark);
+        border-radius: 18px;
+        flex-grow: 1;
+        height: 45px;
+        padding-inline: 10px;
+        color: var(--clr-bg-bento-dark);
+    }
+
+    textarea {
+        background-color: transparent;
+        border: 5px solid var(--clr-bg-bento-dark);
+        border-radius: 18px;
+        flex-grow: 4;
+        resize: none;
+        height: 90px;
+        padding-inline: 10px;
+        padding-block: 10px;
+        color: var(--clr-bg-bento-dark);
+        overflow: scroll;
+
+        @media (max-width: 780px) {
+            
+        }
+    }
+
+    input[type="submit"] {
+        height: 90px;
+        background-color: var(--clr-bg-bento-dark);
+        border: 5px solid var(--clr-bg-bento-dark);
+        font-size: 48px;
+        color: var(--clr-accent);
+        flex-grow: 1;
+        font-weight: 700;
+        border-radius: 18px;
+        width: 25%;
+    }
 }
 
 .contact-content > .right-col > .row-2 {
@@ -593,6 +696,11 @@ svg {
 
     img {
         width: 90px;
+
+        @media (max-width: 780px) {
+            width: 60px;
+            padding-block: 20px;
+        }
     }
 }
 
