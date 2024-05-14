@@ -3,6 +3,10 @@ let headerLogo = document.querySelector(".header-logo");
 const nav = document.querySelector('header ul');
 const navToggle = document.querySelector('.nav-toggle');
 
+let cursor = document.querySelector(".cursor");
+
+
+
 window.addEventListener('scroll', function() {
     if (window.innerWidth >= 780) {
         if (window.scrollY > 10) {
@@ -37,3 +41,6 @@ function toggleMenu() {
 }
 
 
+document.addEventListener("mousemove", function(e) {
+    cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;"
+})

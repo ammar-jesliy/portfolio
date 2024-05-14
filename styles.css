@@ -38,6 +38,23 @@ body {
     margin: 0 auto;
 }
 
+
+/*cursor*/
+
+.cursor {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid white;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+}
+
+
+/*Hero section*/
+
 .header-logo {
     width: calc(100% - 90px);
     position: fixed;
@@ -133,7 +150,8 @@ svg {
 .hero-text p {
     font-size: clamp(32px, 5vw, 54px);
     font-weight: 500;
-
+    position: relative;
+    z-index: -1;
 }
 
 .hero-text p span {

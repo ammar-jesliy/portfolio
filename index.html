@@ -141,8 +141,12 @@
         <!-- <div style="height: 5000px;"></div> -->
     </div>
 
+    <div class="cursor"></div>
+
 
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
     <script>
         const lenis = new Lenis()
@@ -200,6 +204,47 @@
 
 
     </script> 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger)
+
+            const letters = document.querySelectorAll(".header-logo path")
+            const links = document.querySelectorAll(".menu-link")
+            const text = document.querySelector(".hero-text p")
+            const navToggle = document.querySelector(".nav-toggle")
+
+
+            const timeline = gsap.timeline()
+
+            timeline.from(letters, {
+                y: 300,
+                opacity: 0,
+                ease: "power1.out",
+                stagger: 0.2,
+                duration: 1
+            })
+            timeline.from(links, {
+                y: 40,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.3
+            })
+            timeline.from(text, {
+                y: 50,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.5
+            }, 2)
+            timeline.from(navToggle, {
+                y: 40,
+                opacity: 0,
+                duration: 0.3
+            }, 2)
+            
+            });
+       
+       </script>
 
     <script src="script.js"></script>
 </body>
