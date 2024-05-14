@@ -569,7 +569,7 @@ svg {
     }
 
     h2 {
-        font-size: 54px;
+        font-size: clamp(32px, 5vw, 54px);
         font-weight: 700;
         padding-top: 20px;
         padding-bottom: 40px;
@@ -616,8 +616,8 @@ svg {
     }
 
     h3 {
-        color: var(--clr-text-secondary);
-        font-size: 54px;
+        color: var(--clr-bg-bento-dark);
+        font-size: clamp(32px, 5vw, 54px);
         font-weight: 700;
     }
 
