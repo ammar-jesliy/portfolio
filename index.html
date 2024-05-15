@@ -39,7 +39,7 @@
                 <div class="hero-image">
                 </div>
                 <div class="hero-text">
-                    <p><span class="grey">I'm Ammar Jesliy</span> - an aspiring software developer <span class="grey">from Sri Lanka, focused on</span> front-end web development <span class="grey">and</span> machine learning.</p>
+                    <p><span class="grey">I'm Ammar Jesliy</span> - a software developer <span class="grey">from </span>Sri Lanka, <span class="grey">with a passion for</span> art <span class="grey">and</span> technology.</p>
                 </div>
             </div>
         </section>
@@ -138,10 +138,16 @@
             </div>
         </section>
 
+        <section class="footer">
+
+        </section>
+
+
+        <div class="cursor"></div>
         <!-- <div style="height: 5000px;"></div> -->
     </div>
 
-    <div class="cursor"></div>
+    
 
 
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
@@ -149,7 +155,12 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
     <script>
-        const lenis = new Lenis()
+        const lenis = new Lenis({
+            duration: 1, // Increase duration for slower scrolling
+            easing: (t) => t * (2 - t), // Custom easing function for smoother effect
+            smooth: true, // Enable smooth scrolling
+            wheelMultiplier: 0.5
+        });
 
         lenis.on('scroll', (e) => {
 
@@ -215,37 +226,86 @@
             const navToggle = document.querySelector(".nav-toggle")
 
 
-            const timeline = gsap.timeline()
+            const timelineHero = gsap.timeline()
 
-            timeline.from(letters, {
+            timelineHero.from(letters, {
                 y: 300,
                 opacity: 0,
-                ease: "power1.out",
+                ease: "expo.out",
                 stagger: 0.2,
                 duration: 1
             })
-            timeline.from(links, {
+            timelineHero.from(links, {
                 y: 40,
                 opacity: 0,
                 stagger: 0.1,
-                duration: 0.3
+                duration: 0.3,
             })
-            timeline.from(text, {
+            timelineHero.from(text, {
                 y: 50,
                 opacity: 0,
                 stagger: 0.1,
                 duration: 0.5
             }, 2)
-            timeline.from(navToggle, {
+            timelineHero.from(navToggle, {
                 y: 40,
                 opacity: 0,
                 duration: 0.3
             }, 2)
+
             
+            const timelineAbout = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".about",
+                    start: "-25% 80%",
+                    end: "center center",
+                    scrub: false,
+                    markers: false
+                }
             });
+
+            timelineAbout.from(".about-content div", {
+                y: 100,
+                opacity: 0,
+                stagger: 0.2
+            })
+
+            const timelinePortfolio = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".portfolio",
+                    start: "top 80%",
+                    end: "center center",
+                    scrub: false,
+                    markers: false
+                }
+            });
+
+            timelinePortfolio.from(".portfolio-content div", {
+                y: 100,
+                opacity: 0,
+                stagger: 0.3
+            })
+
+            const timelineContact = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".contact",
+                    start: "top 80%",
+                    end: "center center",
+                    scrub: false,
+                    markers: false
+                }
+            });
+
+            timelineContact.from(".contact-content div", {
+                y: 100,
+                opacity: 0,
+                stagger: 0.3
+            })
+            
+        });
        
        </script>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
