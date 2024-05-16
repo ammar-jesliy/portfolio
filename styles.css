@@ -189,7 +189,7 @@ svg {
 }
 
 .hero-text p {
-    font-size: clamp(32px, 5vw, 84px);
+    font-size: clamp(32px, 5vw, 74px);
     font-weight: 500;
     position: relative;
     z-index: -1;
@@ -546,7 +546,7 @@ svg {
     flex-direction: column;
     background-color: var(--clr-bg-bento-dark);
     border-radius: var(--bento-border-radius);
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 3rem 2rem;
 
     > p {
