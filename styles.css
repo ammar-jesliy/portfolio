@@ -43,6 +43,7 @@ body {
 
 .cursor {
     position: fixed;
+    z-index: 9999;
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -93,6 +94,7 @@ body {
     left: 48px;
     margin-top: 50px;
     transition: all 0.8s ease-in-out;
+    z-index: 999;
 }
 
 .header-logo-shrinked {
@@ -755,3 +757,43 @@ svg {
     }
 }
 
+
+
+/* preloader  */
+
+.preloader {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+
+
+    .blinder-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+
+        .blinder {
+            background-color: white;
+            height: 100vh;
+            flex: 1;
+            transform-origin: top;
+        }
+    }
+
+    .preloader-counter {
+        color: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        align-content: center;
+        text-align: center;
+    }
+}
+
+.hidden {
+    display: none;
+}

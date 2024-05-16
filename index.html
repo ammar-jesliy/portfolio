@@ -147,6 +147,18 @@
         <!-- <div style="height: 5000px;"></div> -->
     </div>
 
+    <div class="preloader">
+        <div class="blinder-container">
+            <div class="blinder"></div>
+            <div class="blinder"></div>
+            <div class="blinder"></div>
+            <div class="blinder"></div>
+            <div class="blinder"></div>
+        </div>
+        <div class="preloader-counter">0%</div>
+        
+    </div>
+
     
 
 
@@ -222,8 +234,15 @@
 
             const letters = document.querySelectorAll(".header-logo path")
             const links = document.querySelectorAll(".menu-link")
-            const text = document.querySelector(".hero-text p")
             const navToggle = document.querySelector(".nav-toggle")
+
+
+            gsap.to(".blinder", {
+                scaleY: 0,
+                stagger: 0.3,
+                delay: 3,
+                ease: "power3.out"
+            })
 
 
             const timelineHero = gsap.timeline()
@@ -233,7 +252,8 @@
                 opacity: 0,
                 ease: "expo.out",
                 stagger: 0.2,
-                duration: 1
+                duration: 1,
+                delay: 4.8
             })
             timelineHero.from(links, {
                 y: 40,
@@ -241,17 +261,17 @@
                 stagger: 0.1,
                 duration: 0.3,
             })
-            timelineHero.from(text, {
+            timelineHero.from('.hero-content', {
                 y: 50,
                 opacity: 0,
                 stagger: 0.1,
                 duration: 0.5
-            }, 2)
+            })
             timelineHero.from(navToggle, {
                 y: 40,
                 opacity: 0,
                 duration: 0.3
-            }, 2)
+            })
 
             
             const timelineAbout = gsap.timeline({
@@ -280,7 +300,7 @@
                 }
             });
 
-            timelinePortfolio.from(".portfolio-content div", {
+            timelinePortfolio.from(".portfolio-content > div", {
                 y: 100,
                 opacity: 0,
                 stagger: 0.3
@@ -304,6 +324,49 @@
             
         });
        
+       </script>
+
+       <script>
+            // Preloader
+            // Function to disable scrolling
+            function disableScrolling() {
+                lenis.stop();
+            }
+
+            // Function to enable scrolling
+            function enableScrolling() {
+                lenis.start();
+            }
+
+            // Disable scrolling initially
+            disableScrolling();
+
+            // Function to update the counter
+            function updateCounter(value) {
+                document.querySelector('.preloader-counter').innerText = `${Math.round(value)}%`;
+            }
+
+            gsap.to({}, {
+                duration: 2.5,
+                onUpdate: function() {
+                    const progress = this.progress() * 100;
+                    updateCounter(progress);
+                },
+            });
+
+            gsap.to('.preloader-counter', {
+                scale: 0, 
+                delay: 2.8
+            })
+
+            // Simulate preloader animation duration
+            setTimeout(function() {
+                // Hide preloader
+                document.querySelector('.preloader').classList.add('hidden');
+                
+                // Enable scrolling
+                enableScrolling();
+            }, 5000); // Adjust time as per your preloader animation duration
        </script>
 
     <script src="script.js" defer></script>
