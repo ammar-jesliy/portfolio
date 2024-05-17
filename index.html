@@ -138,14 +138,31 @@
             </div>
         </section>
 
-        <section class="footer">
-
-        </section>
-
-
         <div class="cursor"></div>
         <!-- <div style="height: 5000px;"></div> -->
     </div>
+
+    <div class="spacer-transparent"></div>
+
+    <section class="footer">
+        <div class="footer-content">
+            <div class="links">
+                <div class="contact-link">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:ammarjc1@gmail.com">ammarjc1@gmail.com</a></p>
+                </div>
+                <div class="site-link">
+                    <h4>Site</h4>
+                    <p><a href="">home.</a></p>
+                    <p><a href="projects.html">projects.</a></p>
+                    <p><a href="resume.html">resume.</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 ammar jesliy. all rights reserved.</p>
+            </div>
+        </div>
+    </section>
 
     <div class="preloader">
         <div class="blinder-container">
@@ -322,6 +339,27 @@
                 stagger: 0.3
             })
             
+
+            // Delay mechanism
+            let scrollTimeout;
+
+            // Detect the end of the .content div and introduce a delay
+            ScrollTrigger.create({
+                trigger: '.content',
+                start: '99% bottom',
+                end: 'bottom+=1 bottom', // Adjust end value to trigger immediately after start
+                onEnter: () => {
+                    lenis.stop(); // Stop scrolling
+                    scrollTimeout = setTimeout(() => {
+                        lenis.start(); // Resume scrolling after 1 second
+                    }, 500); // Delay for 1 second
+                },
+                onLeaveBack: () => {
+                    clearTimeout(scrollTimeout); // Clear timeout if scrolling back up
+                    lenis.start(); // Ensure scrolling is resumed
+                }
+            });
+
         });
        
        </script>
