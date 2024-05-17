@@ -291,49 +291,37 @@
             })
 
             
-            const timelineAbout = gsap.timeline({
+            gsap.from(".about-content div", {
                 scrollTrigger: {
                     trigger: ".about",
-                    start: "-25% 80%",
-                    end: "center center",
+                    start: "top center",
                     scrub: false,
                     markers: false
-                }
-            });
-
-            timelineAbout.from(".about-content div", {
+                },
                 y: 100,
                 opacity: 0,
                 stagger: 0.2
             })
 
-            const timelinePortfolio = gsap.timeline({
+            gsap.from(".portfolio-content > div", {
                 scrollTrigger: {
                     trigger: ".portfolio",
-                    start: "top 80%",
-                    end: "center center",
+                    start: "top center",
                     scrub: false,
                     markers: false
-                }
-            });
-
-            timelinePortfolio.from(".portfolio-content > div", {
+                },
                 y: 100,
                 opacity: 0,
                 stagger: 0.3
             })
 
-            const timelineContact = gsap.timeline({
+            gsap.from(".contact-content div", {
                 scrollTrigger: {
                     trigger: ".contact",
-                    start: "top 80%",
-                    end: "center center",
+                    start: "top center",
                     scrub: false,
                     markers: false
-                }
-            });
-
-            timelineContact.from(".contact-content div", {
+                },
                 y: 100,
                 opacity: 0,
                 stagger: 0.3
