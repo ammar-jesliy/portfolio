@@ -326,27 +326,6 @@
                 opacity: 0,
                 stagger: 0.2
             })
-            
-
-            // Delay mechanism
-            let scrollTimeout;
-
-            // Detect the end of the .content div and introduce a delay
-            ScrollTrigger.create({
-                trigger: '.content',
-                start: '99% bottom',
-                end: 'bottom+=1 bottom', // Adjust end value to trigger immediately after start
-                onEnter: () => {
-                    lenis.stop(); // Stop scrolling
-                    scrollTimeout = setTimeout(() => {
-                        lenis.start(); // Resume scrolling after 1 second
-                    }, 500); // Delay for 1 second
-                },
-                onLeaveBack: () => {
-                    clearTimeout(scrollTimeout); // Clear timeout if scrolling back up
-                    lenis.start(); // Ensure scrolling is resumed
-                }
-            });
 
         });
        
