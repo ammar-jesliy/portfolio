@@ -30,7 +30,7 @@ body {
 }
 
 .spacer {
-    height: 30dvh;
+    height: 30vh;
     background-color: var(--clr-bg);
 }
 
@@ -136,7 +136,6 @@ header ul[data-visible="true"] {
 .menu-link a {
     color: var(--clr-text-primary, white);
     text-decoration: none;
-    
 }
 
 header ul {
@@ -161,7 +160,7 @@ svg {
 }
 
 .hero {
-    height: 70dvh;
+    height: 70vh;
     padding: 0 3rem 2rem 3rem;
     display: flex;
     align-items: end;
@@ -270,7 +269,7 @@ svg {
 /* about section*/
 
 .about {
-    height: 100dvh;
+    height: 100vh;
     padding: 2rem 3rem 2rem 3rem;
     align-content: center;
 
@@ -316,7 +315,7 @@ svg {
     
 
     p {
-        font-size: clamp(24px, 2vw, 24px);
+        font-size: clamp(20px, 2vw, 24px);
         font-weight: 500;
     }
 
@@ -367,6 +366,10 @@ svg {
         aspect-ratio: 1;
         width: clamp(30px, 10vw, 55px);
     }
+
+    @media (max-width: 780px) {
+        padding-block: 20px;        
+    }
 }
 
 .about-content > .left-col > .row-1 > .right-col > .row-2 {
@@ -379,12 +382,12 @@ svg {
     padding: 0.5rem 2.5vw;
     flex-wrap: nowrap;
     white-space: nowrap;
-}
 
-.about-content > .left-col > .row-1 > .right-col > .row-2 p {
-    font-size: clamp(28px, 4vw, 58px);
-    color: var(--clr-text-secondary);
-    font-weight: 700;
+    p {
+        font-size: clamp(28px, 4vw, 58px);
+        color: var(--clr-text-secondary);
+        font-weight: 700;
+    }
 }
 
 .about-content > .left-col > .row-2 {
@@ -417,7 +420,7 @@ svg {
     }
 }
 
-.about-content > .right-col > .row-1 {
+.about-content > .right-col > .row-2 {
     display: flex;
     flex-direction: column;
     padding: 2rem 1.5rem;
@@ -426,7 +429,7 @@ svg {
     background-color: var(--clr-bg-bento-dark);
 
     h2 {
-        font-size: 30px;
+        font-size: clamp(28px, 2.5vw, 34px);
         font-weight: 600;
         white-space: nowrap;
     }
@@ -434,27 +437,53 @@ svg {
     p {
         font-size: 24px;
         font-weight: 600;
+        text-wrap: nowrap;
     }
 
-    p > span {
+    a {
+        text-decoration: none;
+    }
+
+    a > span {
         color: var(--clr-bg-bento-light);
+        display: flex;
+        gap: 10px;
     }
 
-    p > span > span {
+    a > span > span {
         display: inline-block;
         width: 28px;
         background-color: var(--clr-bg-bento-light);
         border-radius: 50%;
         align-content: center;
         text-align: center;
+        overflow: hidden;
     }
 
     span img {
+        position: relative;
+        z-index: 2;
         transform: rotate(-135deg);
+        transition: all 0.5s ease-out;
+    }
+
+    a:hover img {
+        animation: arrow 0.7s ease-out infinite;
+    }
+
+
+}
+
+@keyframes arrow {
+    0% {
+        transform: translate(-20px, 20px) rotate(-135deg); 
+    }
+    100% {
+        transform: translate(20px, -20px) rotate(-135deg);
     }
 }
 
-.about-content > .right-col > .row-2 {
+.about-content > .right-col > .row-1 {
     display: flex;
     flex-grow: 2;
     flex-direction: column;
@@ -463,12 +492,12 @@ svg {
     gap: 7px;
 
     h2 {
-        font-size: 30px;
+        font-size: clamp(28px, 2.5vw, 34px);
         font-weight: 600;
     }
 
     p {
-        font-size: 30px;
+        font-size: clamp(28px, 2.5vw, 34px);
         font-weight: 600;
         color: var(--clr-bg-bento-light);
     }
@@ -511,7 +540,7 @@ svg {
 
 
 .portfolio {
-    height: 100dvh;
+    height: 100vh;
     padding: 2rem 3rem 2rem 3rem;
     align-content: center;
 
@@ -585,25 +614,26 @@ svg {
         border-radius: 50%;
         padding: 15px;
         margin: 10px;
+        overflow: hidden;
     }
 
     img {
-        width: clamp(12px, 1.5vw, 25px);
-        transition: all 0.2s ease;
+        width: 15px;
+        transform: rotate(-135deg);
     }
 }
 
-.portfolio-content .button:hover img {
-    transform: rotate(-90deg);
-    transition: all 0.2s ease;
+.button:hover img {
+    animation: arrow 0.7s ease-out infinite;
 }
+
 
 
 
 /* contact section */
 
 .contact {
-    height: 100dvh;
+    height: 100vh;
     padding: 2rem 3rem 2rem 3rem;
     align-content: center;
 
@@ -717,8 +747,8 @@ svg {
 
     .row-1 > [type="text"], input[type="email"] {
         background-color: transparent;
-        border: 5px solid var(--clr-bg-bento-dark);
-        border-radius: 18px;
+        border: 4px solid var(--clr-bg-bento-dark);
+        border-radius: 12px;
         flex-grow: 1;
         height: 45px;
         padding-inline: 10px;
@@ -727,8 +757,8 @@ svg {
 
     textarea {
         background-color: transparent;
-        border: 5px solid var(--clr-bg-bento-dark);
-        border-radius: 18px;
+        border: 4px solid var(--clr-bg-bento-dark);
+        border-radius: 12px;
         flex-grow: 4;
         resize: none;
         height: 90px;
@@ -745,12 +775,12 @@ svg {
     input[type="submit"] {
         height: 90px;
         background-color: var(--clr-bg-bento-dark);
-        border: 5px solid var(--clr-bg-bento-dark);
+        border: 4px solid var(--clr-bg-bento-dark);
         font-size: 48px;
         color: var(--clr-accent);
         flex-grow: 1;
         font-weight: 700;
-        border-radius: 18px;
+        border-radius: 12px;
         width: 25%;
     }
 }
@@ -808,14 +838,14 @@ svg {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-            padding-bottom: 3rem;
+            padding-bottom: 1.5rem;
 
             > div {
                 height: fit-content;
             }
 
             h4 {
-                color: black;
+                color: var(--clr-text-secondary);
                 font-size: 18px;
                 width: fit-content;
             }
@@ -829,7 +859,7 @@ svg {
             }
 
             a {
-                color: black;
+                color: var(--clr-text-secondary);
                 font-size: 16px;
             }
         }
@@ -839,7 +869,7 @@ svg {
     .copyright {
 
         p {
-            color: black;
+            color: var(--clr-text-secondary);
             font-size: clamp(8px, 1.5vw, 14px);
         }
     }
@@ -872,7 +902,7 @@ svg {
         display: flex;
 
         .blinder {
-            background-color: white;
+            background-color: var(--clr-bg-bento-light);
             height: 100vh;
             flex: 1;
             transform-origin: top;
@@ -880,7 +910,9 @@ svg {
     }
 
     .preloader-counter {
-        color: black;
+        color: var(--clr-text-secondary);
+        font-size: 38px;
+        font-weight: 100;
         position: absolute;
         height: 100%;
         width: 100%;
