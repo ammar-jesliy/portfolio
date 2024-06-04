@@ -891,7 +891,7 @@ svg {
 /* preloader  */
 
 .preloader {
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     position: absolute;
     z-index: 9999;
@@ -906,7 +906,7 @@ svg {
         display: flex;
 
         .blinder {
-            background-color: var(--clr-bg-bento-light);
+            background-color: var(--clr-accent);
             height: 100vh;
             flex: 1;
             transform-origin: top;
