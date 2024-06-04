@@ -177,7 +177,22 @@
             <div class="blinder"></div>
             <div class="blinder"></div>
         </div>
-        <div class="preloader-counter">0%</div>
+        <div class="preloader-content">
+            <div class="row-1">
+                <p>AMMAR</p>
+                <p>JESLIY</p>
+            </div>
+            <div class="row-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="219" height="198" viewBox="0 0 219 198" fill="none">
+                    <path id="signature" d="M31 88.1867C50.4998 55.6867 45.8447 8.6305 47.4447 4.6305C49.4447 -0.3695 70.9998 24.619 70.9998 70.6868C70.9998 108.188 71.0311 115.23 68 141.5C66.5 154.5 61.6485 181.369 60.055 184.556C58.4615 187.743 55.8329 193.187 49.4998 194.131C28.9998 197.187 33.1136 173.792 38.4447 162.631C44 151 91.4447 76.1306 102.445 47.1306C113.445 18.1306 103.164 54.5565 101.445 61.6306C99 71.6867 104.445 82.6306 110.945 67.1306C117.445 51.6306 118.945 48.6307 118.945 60.6306C118.945 72.6305 117.945 78.6306 123.445 69.6306C128.945 60.6306 129.445 57.6306 129.445 54.1306C129.445 50.6306 131.445 66.1306 132.945 69.6306C134.445 73.1306 135.5 75.1306 139.5 60.6306C143.5 46.1306 143.055 45.187 143.555 56.687C144.055 68.187 148.948 75.1801 149.555 66.687C151.055 45.687 165.5 46.1306 160.5 49.1306C155.706 52.0067 150.5 59.1867 153.445 65.6306C156.354 71.9972 165 73.1867 168.445 60.6306C170.945 51.5161 169.445 44.1306 170.945 45.6306C172.445 47.1306 172.134 62.7112 173.445 67.1306C175.779 75 188 73.755 188 60.6306C188 55 188 24.6867 191.5 43.6867C192.503 49.1306 194.3 69.4867 193.5 70.6867C192.5 72.1867 198 42.6877 215.5 43.6867" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                    <path id="line" d="M4 43L179 11" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+            </div>
+            <div class="row-3">
+                <p>SOFTWARE DEVELOPER</p>
+                <p>WEB DESIGNER</p>
+            </div>
+        </div>
         
     </div>
 
@@ -193,7 +208,7 @@
             duration: 1, // Increase duration for slower scrolling
             easing: (t) => t * (2 - t), // Custom easing function for smoother effect
             smooth: true, // Enable smooth scrolling
-            wheelMultiplier: 0.5
+            wheelMultiplier: 0.65
         });
 
         lenis.on('scroll', (e) => {
@@ -259,10 +274,12 @@
             const navToggle = document.querySelector(".nav-toggle")
 
 
+
+
             gsap.to(".blinder", {
                 scaleY: 0,
-                stagger: 0.25,
-                delay: 3,
+                stagger: 0.1,
+                delay: 4,
                 ease: "power3.out"
             })
 
@@ -275,28 +292,28 @@
                 ease: "expo.out",
                 stagger: 0.2,
                 duration: 1,
-                delay: 5
+                delay: 4.5
             })
             timelineHero.from(links, {
                 y: 40,
                 opacity: 0,
                 stagger: 0.1,
                 duration: 0.3,
-            })
+            }, 5)
             timelineHero.from('.hero-content', {
                 y: 50,
                 opacity: 0,
                 stagger: 0.1,
                 duration: 0.5
-            })
+            }, 5)
             timelineHero.from(navToggle, {
                 y: 40,
                 opacity: 0,
                 duration: 0.3
-            }, 6.3)
+            }, 5)
 
             
-            gsap.from(".about-content div", {
+            gsap.from(".about-content > div", {
                 scrollTrigger: {
                     trigger: ".about",
                     start: "top 75%",
@@ -317,7 +334,7 @@
                 },
                 y: 50,
                 opacity: 0,
-                stagger: 0.5
+                stagger: 0.4
             })
 
             gsap.from(".contact-content div", {
@@ -329,11 +346,56 @@
                 },
                 y: 50,
                 opacity: 0,
-                stagger: 0.2
+                stagger: 0.1
             })
 
         });
        
+       </script>
+
+       <script>
+            // First, get the path element
+            const signaturePath = document.getElementById('signature');
+            const pathLength = signaturePath.getTotalLength();
+
+            const linePath = document.getElementById('line');
+            const linePathLength = signaturePath.getTotalLength();
+
+            // Set up the initial stroke properties
+            gsap.set(signaturePath, {
+                strokeDasharray: pathLength,
+                strokeDashoffset: pathLength
+            });
+
+            gsap.set(linePath, {
+                strokeDasharray: linePathLength,
+                strokeDashoffset: linePathLength
+            });
+
+            // Animate the path with variable speed
+            gsap.timeline()
+                .to(signaturePath, {
+                strokeDashoffset: 0,
+                ease: "power1.out",
+                duration: 2,  // Duration for the first segment
+            })
+            .to(linePath, {
+                delay: 0.3,
+                strokeDashoffset: 0,
+                ease: "power1.out",
+                duration: 1
+            })
+            .to([linePath, signaturePath], {
+                opacity: 0,
+                duration: 0.5,
+            })
+            .to('.preloader-content .row-1, .preloader-content .row-3', {
+                y: -10,
+                rotationX: -90,
+                duration: 0.2,
+                stagger: 0.1
+            }, 3)
+
        </script>
 
        <script>
@@ -350,24 +412,6 @@
 
             // Disable scrolling initially
             disableScrolling();
-
-            // Function to update the counter
-            function updateCounter(value) {
-                document.querySelector('.preloader-counter').innerText = `${Math.round(value)}%`;
-            }
-
-            gsap.to({}, {
-                duration: 2.5,
-                onUpdate: function() {
-                    const progress = this.progress() * 100;
-                    updateCounter(progress);
-                }
-            });
-
-            gsap.to('.preloader-counter', {
-                opacity: 0,
-                delay: 2.8
-            })
 
             // Simulate preloader animation duration
             setTimeout(function() {

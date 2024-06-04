@@ -25,6 +25,10 @@
     color: #fff;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: var(--clr-bg);
 }
@@ -909,15 +913,33 @@ svg {
         }
     }
 
-    .preloader-counter {
+    .preloader-content {
         color: var(--clr-text-secondary);
         font-size: 38px;
         font-weight: 100;
         position: absolute;
         height: 100%;
         width: 100%;
-        align-content: center;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .row-1, .row-3 {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-size: clamp(14px, 2vw, 18px);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .row-2 {
+            width: 20%;
+            min-width: 250px
+            
+        }
+
     }
 }
 
