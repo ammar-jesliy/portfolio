@@ -279,7 +279,7 @@
             gsap.to(".blinder", {
                 scaleY: 0,
                 stagger: 0.1,
-                delay: 3.75,
+                delay: 4,
                 ease: "power3.out"
             })
 
@@ -378,6 +378,7 @@
                 strokeDashoffset: 0,
                 ease: "power1.out",
                 duration: 2,  // Duration for the first segment
+                delay: 0.5
             })
             .to(linePath, {
                 delay: 0.3,
@@ -420,7 +421,7 @@
                 
                 // Enable scrolling
                 enableScrolling();
-            }, 4500); // Adjust time as per your preloader animation duration
+            }, 5000); // Adjust time as per your preloader animation duration
        </script>
 
     <script src="script.js" defer></script>
