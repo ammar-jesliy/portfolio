@@ -929,8 +929,9 @@ svg {
             display: flex;
             justify-content: space-between;
             width: 100%;
-            font-size: clamp(14px, 2vw, 18px);
-            padding: 20px;
+            font-size: clamp(14px, 2vw, 24px);
+            font-weight: 400;
+            padding: 25px;
             overflow: hidden;
         }
 
