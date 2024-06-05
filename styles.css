@@ -6,8 +6,8 @@
     --clr-bg-bento-dark: #222730;
     --clr-bg-bento-light: #8D99AE;
 
-    --bento-border-radius: 32px;
-    --bento-gap: 18px;
+    --bento-border-radius: 28px;
+    --bento-gap: 16px;
 
     --content-max-width: 1000px;
 }
@@ -92,13 +92,20 @@ body {
     text-align: center;
 }
 
+.cursor.hover-invert {
+    width: 150px;
+    height: 150px;
+    mix-blend-mode: difference;
+    background-color: var(--clr-text-primary);
+    border: none;
+}
 
 /*Hero section*/
 
 .header-logo {
     width: calc(100% - 90px);
     position: fixed;
-    top: 50px;
+    top: 40px;
     left: 48px;
     margin-top: 50px;
     transition: all 0.8s ease-in-out;
@@ -269,6 +276,47 @@ svg {
 }
 
 
+/* Corousel section */
+
+.carousel {
+    height: 30vh;
+    font-size: 36px;
+    overflow: hidden;
+    display: flex;
+    max-width: 1800px;
+    -webkit-mask: linear-gradient(90deg, transparent, white 30%, white 70%, transparent);
+    mask: linear-gradient(90deg, transparent, white 30%, white 70%, transparent);
+
+    .carousel-inner {
+        display: flex;
+        gap: 45px;
+        animation: scroll 15s linear infinite;
+        width: max-content;
+
+        li {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        p {
+            color: var(--clr-bg-bento-light);
+            font-weight: 500;
+        }
+
+        img {
+            height: 45px;
+        }
+    }
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 22.5px))
+    }
+}
+
+
 
 /* about section*/
 
@@ -284,7 +332,7 @@ svg {
 }
 
 .about-content {
-    max-height: 680px;
+    max-height: 600px;
     max-width: var(--content-max-width);
     margin: 0 auto;
     display: flex;
@@ -298,18 +346,18 @@ svg {
 .about-content > .left-col {
     display: flex;
     flex-direction: column;
-    flex-grow: 8;
+    flex: 8;
     gap: var(--bento-gap);
 }
 
 .about-content > .left-col > .row-1 {
-    flex-grow: 3;
+    flex: 3;
     display: flex;
     gap: var(--bento-gap);
 }
 
 .about-content > .left-col > .row-1 > .left-col {
-    flex-grow: 3;
+    flex: 3;
     display: flex;
     flex-direction: column;
     background-color: var(--clr-bg-bento-dark);
@@ -340,7 +388,7 @@ svg {
 
 
 .about-content > .left-col > .row-1 > .right-col {
-    flex-grow: 5;
+    flex: 5;
     display: flex;
     gap: var(--bento-gap);
     flex-direction: column;
@@ -351,14 +399,14 @@ svg {
 }
 
 .about-content > .left-col > .row-1 > .right-col > .row-1 {
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     background-color: var(--clr-bg-bento-dark);
     align-items: center;
     justify-content: space-around;
     gap: 3vw;
     flex-wrap: nowrap;
-    padding: 0.5rem 2.5vw;
+    padding: 0.5rem 1rem;
 
     p {
         font-size: clamp(16px, 2vw, 24px);
@@ -377,45 +425,68 @@ svg {
 }
 
 .about-content > .left-col > .row-1 > .right-col > .row-2 {
-    flex-grow: 2;
+    flex: 2;
     display: flex;
     background-color: var(--clr-bg-bento-light);
     justify-content: center;
     gap: 20px;
     align-items: center;
-    padding: 0.5rem 2.5vw;
+    padding: 0.5rem 1rem;
     flex-wrap: nowrap;
     white-space: nowrap;
 
     p {
-        font-size: clamp(28px, 4vw, 58px);
+        font-size: clamp(28px, 4vw, 46px);
         color: var(--clr-text-secondary);
         font-weight: 700;
     }
 }
 
 .about-content > .left-col > .row-2 {
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     gap: var(--bento-gap);
     height: 100px;
 }
 
 .about-content > .left-col > .row-2 > .left-col {
-    flex-grow: 6;
+    flex: 6;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding: 20px;
     background-color: var(--clr-bg-bento-dark);
+
+    p {
+        font-size: clamp(18px, 2.5vw, 28px);
+        font-weight: 600;
+    }
 }
 
 .about-content > .left-col > .row-2 > .right-col {
-    flex-grow: 2;
+    flex: 2;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-color: var(--clr-bg-bento-dark);
+
+    p {
+        font-size: clamp(28px, 6vw, 62px);
+        line-height: 100%;
+    }
+
+    .sub {
+        font-size: clamp(12px, 0.5vw, 18px);
+    }
 }
 
 .about-content > .right-col {
     display: flex;
-    flex-grow: 2;
+    flex: 2;
     gap: var(--bento-gap);
     flex-direction: column;
 
@@ -428,18 +499,18 @@ svg {
     display: flex;
     flex-direction: column;
     padding: 2rem 1.5rem;
-    flex-grow: 2;
+    flex: 2;
     gap: 7px;
     background-color: var(--clr-bg-bento-dark);
 
     h2 {
-        font-size: clamp(28px, 2.5vw, 34px);
+        font-size: clamp(24px, 2.5vw, 26px);
         font-weight: 600;
         white-space: nowrap;
     }
 
     p {
-        font-size: 24px;
+        font-size: clamp(20px, 2vw, 22px);
         font-weight: 600;
         text-wrap: nowrap;
     }
@@ -456,7 +527,7 @@ svg {
 
     a > span > span {
         display: inline-block;
-        width: 28px;
+        width: clamp(20px, 2vw, 22px);
         background-color: var(--clr-bg-bento-light);
         border-radius: 50%;
         align-content: center;
@@ -489,19 +560,19 @@ svg {
 
 .about-content > .right-col > .row-1 {
     display: flex;
-    flex-grow: 2;
+    flex: 2;
     flex-direction: column;
     padding: 2rem 1.5rem;
     background-color: var(--clr-bg-bento-dark);
     gap: 7px;
 
     h2 {
-        font-size: clamp(28px, 2.5vw, 34px);
+        font-size: clamp(24px, 2.5vw, 26px);
         font-weight: 600;
     }
 
     p {
-        font-size: clamp(28px, 2.5vw, 34px);
+        font-size: clamp(24px, 2.5vw, 26px);
         font-weight: 600;
         color: var(--clr-bg-bento-light);
     }
@@ -753,7 +824,7 @@ svg {
         background-color: transparent;
         border: 4px solid var(--clr-bg-bento-dark);
         border-radius: 12px;
-        flex-grow: 1;
+        flex: 1;
         height: 45px;
         padding-inline: 10px;
         color: var(--clr-bg-bento-dark);
@@ -763,7 +834,7 @@ svg {
         background-color: transparent;
         border: 4px solid var(--clr-bg-bento-dark);
         border-radius: 12px;
-        flex-grow: 4;
+        flex: 4;
         resize: none;
         height: 90px;
         padding-inline: 10px;
@@ -782,7 +853,7 @@ svg {
         border: 4px solid var(--clr-bg-bento-dark);
         font-size: 48px;
         color: var(--clr-accent);
-        flex-grow: 1;
+        flex: 1;
         font-weight: 700;
         border-radius: 12px;
         width: 25%;
@@ -874,7 +945,7 @@ svg {
 
         p {
             color: var(--clr-text-secondary);
-            font-size: clamp(8px, 1.5vw, 14px);
+            font-size: clamp(12px, 1.5vw, 14px);
         }
     }
 }
@@ -938,7 +1009,11 @@ svg {
         .row-2 {
             width: 20%;
             min-width: 250px
-            
+
+        }
+
+        svg {
+            overflow: visible;
         }
 
     }

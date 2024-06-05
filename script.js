@@ -108,6 +108,15 @@ if (!isTouchDevice()) {
         });
     });
 
+    const nameSvg = document.querySelector('.header-logo svg');
+
+    nameSvg.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover-invert');
+    });
+    nameSvg.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover-invert');
+    });
+
     function animate() {
         cursor.style.cssText = "left: " + mouseX + "px; top: " + mouseY + "px;";
         requestAnimationFrame(animate);
