@@ -114,7 +114,11 @@
                 <img src="images/figma.svg" alt="figma-icon">
                 <p>Figma</p>
             </li>
-            
+            <li>
+                <img src="images/tailwind.svg" alt="tailwind-icon">
+                <p>Tailwind</p>
+            </li>
+
             <li>
                 <img src="images/html.svg" alt="html-icon">
                 <p>HTML</p>
@@ -143,9 +147,60 @@
                 <img src="images/figma.svg" alt="figma-icon">
                 <p>Figma</p>
             </li>
+            <li>
+                <img src="images/tailwind.svg" alt="tailwind-icon">
+                <p>Tailwind</p>
+            </li>
         </ul>
 
       </div>
+
+
+      <section class="projects">
+
+        <div class="heading pinned">
+            <h2>Selected Works</h2>
+        </div>
+
+        <div class="card pinned">
+            <div class="img">
+                <div class="head">
+                    <div class="text">
+                        <div class="details">
+                            <h3>My portfolio</h3>
+                            <p>HTML, CSS, JavaScript, GSAP</p>
+                        </div>
+                        <p>My very first web project was my portfolio site</p>
+                    </div>
+                    <div class="btn">
+                        VIEW
+                    </div>
+                </div>
+                <div class="image"></div>
+            </div>
+        </div>
+        <div class="card pinned">
+            <div class="img">
+                <div class="head">
+                    <div class="text">
+                        <div class="details">
+                            <h3>cascade</h3>
+                            <p>React, Tailwind, Appwrite, React-query</p>
+                        </div>
+                        <p>A full stack task management web app</p>
+                    </div>
+                    <div class="btn">
+                        VIEW
+                    </div>
+                </div>
+                <div class="image"></div>
+            </div>
+        </div>
+        <div class="card scroll">
+            <div class="img"></div>
+        </div>
+
+      </section>
 
       <section class="about">
         <div class="about-content">
@@ -156,7 +211,7 @@
                 <p>
                   I've been building stuff on the web for the past four
                   years.<span>
-                    I am skilled in creating dynamic animations and designing visually compelling interfaces that enhance user experiences</span
+                    During this time, I've picked up skills in creating dynamic animations and designing visually compelling interfaces that enhance user experiences</span
                   > 
                 </p>
               </div>
@@ -492,6 +547,42 @@
           },
           5
         );
+
+        // Projects section
+
+        const lastCard = document.querySelector(".card.scroll");
+        const pinnedSections = gsap.utils.toArray(".pinned");
+        const next = document.querySelector(".about");
+
+        pinnedSections.forEach((section, index, sections) => {
+            let img = section.querySelector(".img");
+
+            let nextSection = sections[index + 1] || lastCard;
+
+            let endScalePoint = `top+=${nextSection.offsetTop - section.offsetTop} top`;
+
+            gsap.to(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top top',
+                    end: index === sections.length ? `+=${lastCard.offsetHeight / 2}` : `${next.offsetTop - window.innerHeight}`,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: 1,
+                }
+            })
+
+            gsap.to(img, {
+                scale: 0.9,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top top',
+                    end: endScalePoint,
+                    scrub: 1
+                }
+            })
+        })
 
         gsap.from(".about-content > div", {
           scrollTrigger: {

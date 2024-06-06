@@ -282,14 +282,15 @@ svg {
     height: 30vh;
     font-size: 36px;
     overflow: hidden;
+    margin-inline: auto;
     display: flex;
-    max-width: 1800px;
+    max-width: 1900px;
     -webkit-mask: linear-gradient(90deg, transparent, white 30%, white 70%, transparent);
     mask: linear-gradient(90deg, transparent, white 30%, white 70%, transparent);
 
     .carousel-inner {
         display: flex;
-        gap: 45px;
+        gap: 60px;
         animation: scroll 15s linear infinite;
         width: max-content;
 
@@ -312,7 +313,131 @@ svg {
 
 @keyframes scroll {
     to {
-        transform: translate(calc(-50% - 22.5px))
+        transform: translate(calc(-50% - 30px))
+    }
+}
+
+
+/* Projects section */
+
+.projects {
+    height: 370vh;
+    width: 100vw;
+    position: relative;
+
+    .heading {
+        height: 80vh;
+        width: 100vw;
+    }
+    .card {
+        height: 80vh;
+        width: 100vw;
+    }
+
+    h2 {
+        position: absolute;
+        width: 100%;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 80%;
+        font-size: clamp(52px, 15vw, 100px);
+    }
+
+    .card.scroll {
+        position: relative;
+        .img {
+            height: calc(50vh + 200px);
+        }
+    }
+
+    .img {
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        min-height: 50vh;
+        max-width: 1000px;
+        background-color: var(--clr-bg-bento-dark);
+        border-radius: var(--bento-border-radius);
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .head {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 30px;
+
+            .text {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 30px;
+
+                .details {
+                    flex: 4;
+
+                    h3 {
+                        font-size: 40px;
+                    }
+
+                    p {
+                        font-size: clamp(16px, 1.5vw, 18px);
+                        font-weight: 400;
+                        color: var(--clr-bg-bento-light);
+                    }
+                }
+
+                > p {
+                    flex: 6;
+                    font-size: clamp(18px, 2vw, 24px);
+                    font-weight: 500;
+                }
+
+                @media (max-width: 767px) {
+                    flex-direction: column;
+                    align-items: start;
+                }
+            }
+
+            .btn {
+                background-color: var(--clr-bg-bento-light);
+                padding: 16px 32px;
+                border-radius: 18px;
+                font-size: clamp(12px, 1.7vw, 18px);
+                color: var(--clr-bg-bento-dark);
+                font-weight: 700;
+            }
+
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+                
+            }
+        }
+
+        .image {
+            width: 100%;
+            background-color: var(--clr-bg-bento-light);
+            border-radius: calc(var(--bento-border-radius) - 12px);
+            aspect-ratio: 16 / 9;
+
+            @media (max-width: 767px) {
+                aspect-ratio: 4 / 3;
+            }
+
+            @media (max-height: 500px) {
+                display: none;
+            }
+        }
+
     }
 }
 
@@ -332,7 +457,6 @@ svg {
 }
 
 .about-content {
-    max-height: 600px;
     max-width: var(--content-max-width);
     margin: 0 auto;
     display: flex;
@@ -367,7 +491,7 @@ svg {
     
 
     p {
-        font-size: clamp(20px, 2vw, 24px);
+        font-size: clamp(18px, 2.25vw, 24px);
         font-weight: 500;
     }
 
