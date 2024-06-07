@@ -26,6 +26,7 @@
     <section class="spacer"></section>
 
     <div class="content">
+      <div class="bg"></div>
       <section class="hero">
         <div class="header-logo">
           <svg
@@ -156,7 +157,7 @@
 
       <section class="projects">
         <div class="heading pinned">
-          <h2>Selected Works</h2>
+          <h2>I build stuff</h2>
         </div>
 
         <div class="card pinned">
@@ -193,7 +194,7 @@
           <div class="img">
             <div class="lg-text">
               Your Next <br />
-              Project
+              Project?
             </div>
           </div>
         </div>
@@ -503,7 +504,7 @@
         gsap.to(".blinder", {
           scaleY: 0,
           stagger: 0.1,
-          delay: 4,
+          delay: 3.5,
           ease: "power4.inOut",
         });
 
@@ -515,7 +516,7 @@
           ease: "expo.out",
           stagger: 0.2,
           duration: 1,
-          delay: 4.5,
+          delay: 4,
         });
         timelineHero.from(
           links,
@@ -525,7 +526,7 @@
             stagger: 0.1,
             duration: 0.3,
           },
-          5
+          4.5
         );
         timelineHero.from(
           ".hero-content",
@@ -535,7 +536,7 @@
             stagger: 0.1,
             duration: 0.5,
           },
-          5
+          4.5
         );
         timelineHero.from(
           navToggle,
@@ -544,7 +545,7 @@
             opacity: 0,
             duration: 0.3,
           },
-          5
+          4.5
         );
 
         // Projects section
@@ -569,7 +570,7 @@
               end:
                 index === sections.length
                   ? `+=${lastCard.offsetHeight / 2}`
-                  : `${next.offsetTop - window.innerHeight}`,
+                  : next.offsetTop - window.innerHeight,
               pin: true,
               pinSpacing: false,
               scrub: 1,
@@ -590,7 +591,7 @@
 
         // Special handling for the last card
         const lastCardText = lastCard.querySelector(".lg-text"); // Select the text element inside the last card
-        const fadeDuration = 2; // Adjust the duration for the fade effect as needed
+        const fadeDuration = 3; // Adjust the duration for the fade effect as needed
 
         gsap
           .timeline({
@@ -606,7 +607,7 @@
           .to(lastCardText, {
             scale: 50, // Scale to cover the screen
             ease: "none",
-            duration: 1,
+            duration: 3,
           })
           .to(
             lastCard,
@@ -630,12 +631,12 @@
         gsap.to(lastCard, {
           scrollTrigger: {
             trigger: next,
-            start: "top top",
-            end: "bottom bottom",
+            start: "100 top",
+            end: "120 top",
             scrub: 1,
           },
           opacity: 0,
-          duration: 1,
+          duration: 0.1
         });
 
         gsap.from(".about-content > div", {
