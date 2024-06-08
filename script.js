@@ -1,48 +1,7 @@
-let headerLogo = document.querySelector(".header-logo");
-
 const nav = document.querySelector("header ul");
 const navToggle = document.querySelector(".nav-toggle");
 
 let cursor = document.querySelector(".cursor");
-
-// Indicator to show if the window can fit both .header-logo and .header-content
-let canFit = true;
-
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
-
-if (
-  document.querySelector(".hero-content").clientHeight >=
-  window.innerHeight - document.querySelector(".header-logo").clientHeight - 120
-) {
-  headerLogo.classList.add("header-logo-shrinked");
-  canFit = false;
-}
-window.addEventListener("resize", function () {
-  if (
-    document.querySelector(".hero-content").clientHeight >=
-    window.innerHeight -
-      document.querySelector(".header-logo").clientHeight -
-      120
-  ) {
-    headerLogo.classList.add("header-logo-shrinked");
-    canFit = false;
-  } else {
-    headerLogo.classList.remove("header-logo-shrinked");
-    canFit = true;
-  }
-});
-
-window.addEventListener("scroll", function () {
-  if (window.innerWidth >= 780 && canFit) {
-    if (window.scrollY > 10) {
-      headerLogo.classList.add("header-logo-shrinked");
-    } else {
-      headerLogo.classList.remove("header-logo-shrinked");
-    }
-  }
-});
 
 navToggle.addEventListener("click", () => {
   const visibility = nav.getAttribute("data-visible");
@@ -116,7 +75,9 @@ if (!isTouchDevice()) {
     });
   });
 
-  const nameSvg = document.querySelector(".header-logo svg");
+  const nameSvg = document.querySelector(
+    ".header-logo svg, .header-logo-shrinked svg"
+  );
 
   nameSvg.addEventListener("mouseenter", () => {
     cursor.classList.add("hover-invert");
