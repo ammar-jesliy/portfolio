@@ -57,7 +57,7 @@ body {
   }
 }
 
-/*cursor*/
+/*=========================== cursor ==========================*/
 
 .cursor {
   position: fixed;
@@ -69,7 +69,7 @@ body {
   pointer-events: none;
   transform: translate(-50%, -50%);
   will-change: transform;
-  transition: all 0.1s ease, width 0.5s, height 0.5s;
+  transition: all 0.1s ease, background-color 0.5s, width 0.5s, height 0.5s;
 }
 
 .cursor.hover {
@@ -111,7 +111,7 @@ body {
   transition: all 0.1s, width 0.5s, height 0.5s;
 }
 
-/*Hero section*/
+/*==================== Hero section ========================*/
 
 .header-logo {
   width: calc(100% - 90px);
@@ -206,18 +206,37 @@ svg {
 }
 
 .hero-text {
-  width: 80%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
 }
 
 .hero-text p {
-  font-size: clamp(32px, 5vw, 54px);
+  font-size: clamp(32px, 10vw, 64px);
   font-weight: 500;
   position: relative;
   z-index: -1;
 }
 
-.hero-text p span {
+.hero-text .grey {
   color: var(--clr-accent);
+}
+
+.hero-text .design {
+  height: clamp(32px, 10vw, 64px);
+  aspect-ratio: 2/1;
+  background-color: var(--clr-bg-bento-light);
+  border-radius: 40px;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 780px) {
@@ -283,7 +302,7 @@ svg {
   }
 }
 
-/* Corousel section */
+/* ==================== Corousel section ================== */
 
 .carousel {
   height: 30vh;
@@ -465,7 +484,7 @@ svg {
   }
 }
 
-/* about section*/
+/* =================== about section ======================*/
 
 .about {
   height: 100vh;
@@ -475,6 +494,11 @@ svg {
   @media (max-height: 575px) {
     height: fit-content;
     margin-bottom: 50px;
+  }
+
+  @media (min-width: 1800px) {
+    height: fit-content;
+    margin-bottom: 200px;
   }
 }
 
@@ -751,7 +775,7 @@ svg {
   }
 }
 
-/* portfolio section */
+/* =================== portfolio section ====================*/
 
 .portfolio {
   height: 100vh;
@@ -761,6 +785,11 @@ svg {
   @media (max-height: 575px) {
     height: fit-content;
     margin-bottom: 50px;
+  }
+
+  @media (min-width: 1800px) {
+    height: fit-content;
+    margin-bottom: 200px;
   }
 }
 
@@ -840,7 +869,7 @@ svg {
   animation: arrow 0.7s ease-out infinite;
 }
 
-/* contact section */
+/* ======================= contact section ==================*/
 
 .contact {
   height: 100vh;
@@ -855,6 +884,11 @@ svg {
   @media (max-height: 575px) {
     height: fit-content;
     margin-bottom: 50px;
+  }
+
+  @media (min-width: 1800px) {
+    height: fit-content;
+    margin-bottom: 200px;
   }
 }
 
@@ -1018,7 +1052,7 @@ svg {
   }
 }
 
-/* Footer */
+/* ========================= Footer ======================== */
 
 .footer {
   width: 100%;
@@ -1088,7 +1122,7 @@ svg {
   z-index: -999;
 }
 
-/* preloader  */
+/* ========================= preloader ===================== */
 
 .preloader {
   height: 100dvh;

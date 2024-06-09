@@ -78,14 +78,41 @@
           </nav>
         </header>
         <div class="hero-content">
-          <div class="hero-image"></div>
           <div class="hero-text">
-            <p>
-              <span class="grey">I'm Ammar Jesliy</span> - a software developer
-              <span class="grey">from </span>Sri Lanka,
-              <span class="grey">with a passion for</span> art
-              <span class="grey">and</span> technology.
-            </p>
+            <p class="grey">I'm&nbsp;</p>
+            <p class="grey">Ammar&nbsp;</p>
+            <p class="grey">Jesliy&nbsp;</p>
+            <div class="design">
+              <video autoplay loop muted playsinline preload="auto">
+                <source src="videos/animation-design-1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p>&nbsp;</p>
+            <p>a&nbsp;</p>
+            <p>software&nbsp;</p>
+            <p>developer&nbsp;</p>
+            <p class="grey">from&nbsp;</p>
+            <p>Sri&nbsp;</p>
+            <p>Lanka,&nbsp;</p>
+            <div class="design">
+              <video autoplay loop muted playsinline preload="auto">
+                <source src="videos/animation-design-3.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p>&nbsp;</p>
+            <p class="grey">with&nbsp;</p>
+            <p class="grey">a&nbsp;</p>
+            <p class="grey">passion&nbsp;</p>
+            <p class="grey">for&nbsp;</p>
+            <p>art&nbsp;</p>
+            <p class="grey">and&nbsp;</p>
+            <div class="design">
+              <video autoplay loop muted playsinline preload="auto">
+                <source src="videos/animation-design-2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p>&nbsp;</p>
+            <p>technology.&nbsp;</p>
           </div>
         </div>
       </section>
@@ -212,7 +239,7 @@
               <div class="left-col">
                 <img src="images/icons8-spring-in-motion-90.png" alt="icon" />
                 <p>
-                  I've been building stuff on the web for the past four
+                  I've been building sites on the web for the past four
                   years.<span>
                     During this time, I've picked up skills in creating dynamic
                     animations and designing visually compelling interfaces that
@@ -551,6 +578,17 @@
           },
           4.5
         );
+
+
+        gsap.to(".hero-text .design", {
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+          y: -10
+        })
 
         // Projects section
 
