@@ -41,6 +41,7 @@ body {
 .content {
   margin: 0 auto;
   padding-top: 30vh;
+  padding-top: 30svh;
   background-color: var(--clr-bg);
   border-radius: 0 0 32px 32px;
   position: relative;
@@ -182,6 +183,7 @@ svg {
 
 .hero {
   height: 70vh;
+  height: 70svh;
   padding: 0 3rem 2rem 3rem;
   display: flex;
   align-items: end;
@@ -349,7 +351,7 @@ svg {
   }
 }
 
-/* Projects section */
+/* ========================== Projects section =======================*/
 
 .projects {
   height: 370vh;
