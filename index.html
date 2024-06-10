@@ -489,45 +489,6 @@
       }
 
       requestAnimationFrame(raf);
-
-      // Sections scroll
-      // let sections = document.querySelectorAll('section');
-
-      // function scrollToSection(index) {
-      //     if (index >= 0 && index < sections.length) {
-      //     let targetSection = sections[index];
-      //     lenis.scrollTo(targetSection, {lock: true, duration: 1.5});
-      //     }
-      // }
-
-      // window.addEventListener('wheel', function(event) {
-      //     event.preventDefault(); // Prevent default scroll behavior
-
-      //     // Determine the direction of scroll (up or down)
-      //     var scrollDirection = event.deltaY > 0 ? 1 : -1;
-
-      //     // Find the index of the current section
-      //     var currentSectionIndex = Array.from(sections).findIndex(section => section.offsetTop >= window.scrollY);
-
-      //     // Calculate the index of the next or previous section
-      //     var targetSectionIndex = currentSectionIndex + scrollDirection;
-
-      //     // Scroll to the next or previous section
-      //     if (window.innerWidth > 780) {
-      //         scrollToSection(targetSectionIndex);
-      //     }
-
-      // });
-
-      // window.addEventListener('keydown', function(event) {
-      //     if (window.innerWidth > 780) {
-      //         if (event.keyCode === 38) { // Up arrow key
-      //         scrollToSection(Array.from(sections).findIndex(section => section.offsetTop >= window.pageYOffset) - 1);
-      //         } else if (event.keyCode === 40) { // Down arrow key
-      //         scrollToSection(Array.from(sections).findIndex(section => section.offsetTop > window.pageYOffset));
-      //         }
-      //     }
-      // });
     </script>
 
     <script>
@@ -566,15 +527,21 @@
           4.5
         );
         timelineHero.from(
-          ".hero-content",
+          ".hero-text p",
           {
-            y: 50,
+            y: 10,
             opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
+            stagger: 0.05,
           },
           4.5
         );
+        timelineHero.from(
+          ".hero-text .design", 
+          {
+            scale: 0.5,
+            opacity: 0,
+          }
+        )
         timelineHero.from(
           navToggle,
           {
@@ -592,7 +559,7 @@
             end: "bottom top",
             scrub: 1,
           },
-          y: -10,
+          y: -20,
         });
 
         // Projects section
