@@ -8,7 +8,7 @@
       content="Ammar Jesliy, a software developer specializing in web apps. View my projects and skills."
     />
     <meta name="theme-color" content="#1d1e24" />
-    <meta name="color-scheme" content="dark">
+    <meta name="color-scheme" content="dark" />
     <meta name="robots" content="index, follow" />
     <meta
       name="google-site-verification"
@@ -85,7 +85,7 @@
             <p class="grey">Jesliy&nbsp;</p>
             <div class="design">
               <video autoplay loop muted playsinline preload="auto">
-                <source src="videos/animation-design-1.mp4" type="video/mp4">
+                <source src="videos/animation-design-1.mp4" type="video/mp4" />
               </video>
             </div>
             <p>&nbsp;</p>
@@ -97,7 +97,7 @@
             <p>Lanka,&nbsp;</p>
             <div class="design">
               <video autoplay loop muted playsinline preload="auto">
-                <source src="videos/animation-design-3.mp4" type="video/mp4">
+                <source src="videos/animation-design-3.mp4" type="video/mp4" />
               </video>
             </div>
             <p>&nbsp;</p>
@@ -109,7 +109,7 @@
             <p class="grey">and&nbsp;</p>
             <div class="design">
               <video autoplay loop muted playsinline preload="auto">
-                <source src="videos/animation-design-2.mp4" type="video/mp4">
+                <source src="videos/animation-design-2.mp4" type="video/mp4" />
               </video>
             </div>
             <p>&nbsp;</p>
@@ -206,7 +206,10 @@
               <div class="btn">VIEW</div>
             </div>
             <div class="image">
-              <img src="images/Portfolio-mockup.png" alt="Portfolio home page">
+              <img
+                src="images/Portfolio-mockup.png"
+                alt="Portfolio home page"
+              />
             </div>
           </div>
         </div>
@@ -582,7 +585,6 @@
           4.5
         );
 
-
         gsap.to(".hero-text .design", {
           scrollTrigger: {
             trigger: ".hero",
@@ -590,8 +592,8 @@
             end: "bottom top",
             scrub: 1,
           },
-          y: -10
-        })
+          y: -10,
+        });
 
         // Projects section
 
@@ -684,7 +686,7 @@
           duration: 0.1,
           onComplete: () => {
             lastCard.style.display = "none";
-          }
+          },
         });
 
         gsap.from(".about-content > div", {
