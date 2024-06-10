@@ -28,6 +28,10 @@
   color: #fff;
 }
 
+ul, li {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -1074,7 +1078,6 @@ svg {
   position: fixed;
   bottom: 0;
   z-index: 1;
-  align-content: center;
   align-content: flex-end;
 
   .footer-content {
@@ -1087,7 +1090,6 @@ svg {
     z-index: 2;
 
     @media (max-width: 780px) {
-      height: fit-content;
       padding: 2rem 1em;
     }
 
