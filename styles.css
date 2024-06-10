@@ -37,7 +37,7 @@ a {
 }
 
 body {
-  background-color: var(--clr-bg);
+  background-color: var(--clr-bg-bento-light);
 }
 
 .spacer {
@@ -1078,16 +1078,17 @@ svg {
   position: fixed;
   bottom: 0;
   z-index: 1;
-  align-content: flex-end;
 
   .footer-content {
     max-width: var(--content-max-width);
     margin-inline: auto;
     padding: 2rem 3rem;
     height: 100%;
-    align-content: flex-end;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
     .links {
       display: flex;
