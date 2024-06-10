@@ -1089,10 +1089,6 @@ svg {
     position: relative;
     z-index: 2;
 
-    @media (max-width: 780px) {
-      padding: 2rem 1em;
-    }
-
     .links {
       display: flex;
       align-items: flex-start;
@@ -1132,8 +1128,16 @@ svg {
   }
 }
 
+
+@media (max-width: 780px) {
+  .footer .footer-content {
+      padding: 2rem 1em;
+      height: 100%;
+  }
+}
+
 .spacer-transparent {
-  height: 30vh;
+  height: 50vh;
   background-color: transparent;
   opacity: 0;
   position: relative;
