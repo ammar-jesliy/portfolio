@@ -7,7 +7,8 @@
       name="description"
       content="Ammar Jesliy, a software developer specializing in web apps. View my projects and skills."
     />
-    <meta name="theme-color" content="#101119" />
+    <meta name="theme-color" content="#1d1e24" />
+    <meta name="color-scheme" content="dark">
     <meta name="robots" content="index, follow" />
     <meta
       name="google-site-verification"
@@ -204,7 +205,9 @@
               </div>
               <div class="btn">VIEW</div>
             </div>
-            <div class="image"></div>
+            <div class="image">
+              <img src="images/Portfolio-mockup.png" alt="Portfolio home page">
+            </div>
           </div>
         </div>
         <div class="card pinned">
@@ -679,6 +682,9 @@
           },
           opacity: 0,
           duration: 0.1,
+          onComplete: () => {
+            lastCard.style.display = "none";
+          }
         });
 
         gsap.from(".about-content > div", {
