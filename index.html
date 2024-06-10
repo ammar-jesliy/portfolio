@@ -194,7 +194,7 @@
         </div>
 
         <div class="card pinned">
-          <div class="img">
+          <a href="#" class="img">
             <div class="head">
               <div class="text">
                 <div class="details">
@@ -203,7 +203,24 @@
                 </div>
                 <p>My very first proper web project was my portfolio site</p>
               </div>
-              <div class="btn">VIEW</div>
+              <div class="btn">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="arrow"
+                    d="M2 22L22 2M22 2H7M22 2V17"
+                    stroke="#1E1E1E"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
             </div>
             <div class="image">
               <img
@@ -211,10 +228,10 @@
                 alt="Portfolio home page"
               />
             </div>
-          </div>
+          </a>
         </div>
         <div class="card pinned">
-          <div class="img">
+          <a href="#" class="img">
             <div class="head">
               <div class="text">
                 <div class="details">
@@ -223,10 +240,29 @@
                 </div>
                 <p>A full stack task management web app</p>
               </div>
-              <div class="btn">VIEW</div>
+              <div class="btn">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="arrow"
+                    d="M2 22L22 2M22 2H7M22 2V17"
+                    stroke="#1E1E1E"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
             </div>
-            <div class="image"></div>
-          </div>
+            <div class="image">
+              <img src="images/Cascade-mockup.png" alt="cascade landing page" />
+            </div>
+          </a>
         </div>
         <div class="card scroll">
           <div class="img">
@@ -300,16 +336,30 @@
               />
               <h2>Core Skills</h2>
               <p>
-                React,<br />Python,<br />Java,<br /><a href="#"
-                  ><span
-                    >and more
-                    <span
-                      ><img
-                        src="images/icons8-arrow-50.png"
-                        alt="arrow-icon"
-                        width="13px"
-                        height="13px" /></span></span
-                ></a>
+                React,<br />Python,<br />Java,<br />
+                <a href="#">
+                  <span>
+                    and more
+                    <span>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          id="arrow"
+                          d="M2 22L22 2M22 2H7M22 2V17"
+                          stroke="#1E1E1E"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </a>
               </p>
             </div>
           </div>
@@ -323,7 +373,22 @@
             <a class="button" href="#">
               <p>See my work</p>
               <div class="arrow">
-                <img src="images/icons8-arrow-50.png" alt="arrow-icon" />
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="arrow"
+                    d="M2 22L22 2M22 2H7M22 2V17"
+                    stroke="#1E1E1E"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </div>
             </a>
           </div>
@@ -332,7 +397,22 @@
             <a class="button" href="#">
               <p>My resume</p>
               <div class="arrow">
-                <img src="images/icons8-arrow-50.png" alt="arrow-icon" />
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="arrow"
+                    d="M2 22L22 2M22 2H7M22 2V17"
+                    stroke="#1E1E1E"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </div>
             </a>
           </div>
@@ -400,6 +480,7 @@
         </div>
       </section>
 
+      <div class="cursor-text"></div>
       <div class="cursor"></div>
     </div>
 
@@ -527,7 +608,7 @@
           4.5
         );
         timelineHero.from(
-          ".hero-text p",
+          ".hero-text *",
           {
             y: 10,
             opacity: 0,
@@ -535,13 +616,6 @@
           },
           4.5
         );
-        timelineHero.from(
-          ".hero-text .design", 
-          {
-            scale: 0.5,
-            opacity: 0,
-          }
-        )
         timelineHero.from(
           navToggle,
           {

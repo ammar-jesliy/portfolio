@@ -2,6 +2,7 @@ const nav = document.querySelector("header ul");
 const navToggle = document.querySelector(".nav-toggle");
 
 let cursor = document.querySelector(".cursor");
+let cursorText = document.querySelector(".cursor-text");
 
 navToggle.addEventListener("click", () => {
   const visibility = nav.getAttribute("data-visible");
@@ -53,25 +54,25 @@ if (!isTouchDevice()) {
     p.addEventListener("mouseenter", () => {
       cursor.classList.add("hover-input");
       if (p.type == "submit") {
-        cursor.innerHTML = "go.";
+        cursorText.innerHTML = "go.";
       } else {
-        cursor.innerHTML = "enter.";
+        cursorText.innerHTML = "enter.";
       }
     });
     p.addEventListener("mouseleave", () => {
       cursor.classList.remove("hover-input");
-      cursor.innerHTML = "";
+      cursorText.innerHTML = "";
     });
   });
 
   document.querySelectorAll("a").forEach((p) => {
     p.addEventListener("mouseenter", () => {
       cursor.classList.add("hover-link");
-      cursor.innerHTML = "visit.";
+      cursorText.innerHTML = "visit.";
     });
     p.addEventListener("mouseleave", () => {
       cursor.classList.remove("hover-link");
-      cursor.innerHTML = "";
+      cursorText.innerHTML = "";
     });
   });
 
@@ -86,8 +87,20 @@ if (!isTouchDevice()) {
     cursor.classList.remove("hover-invert");
   });
 
+  document.querySelectorAll(".projects a.img").forEach((p) => {
+    p.addEventListener("mouseenter", () => {
+      cursor.classList.add("hover-project");
+      cursorText.innerHTML = "view.";
+    });
+    p.addEventListener("mouseleave", () => {
+      cursor.classList.remove("hover-project");
+      cursorText.innerHTML = "";
+    });
+  });
+
   function animate() {
     cursor.style.cssText = "left: " + mouseX + "px; top: " + mouseY + "px;";
+    cursorText.style.cssText = "left: " + mouseX + "px; top: " + mouseY + "px;";
     requestAnimationFrame(animate);
   }
 
