@@ -1083,6 +1083,8 @@ svg {
     padding: 2rem 3rem;
     height: 100%;
     align-content: flex-end;
+    position: relative;
+    z-index: 2;
 
     @media (max-width: 780px) {
       height: fit-content;
