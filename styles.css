@@ -128,8 +128,8 @@ body {
 }
 
 .cursor.hover-invert {
-  width: 1500px;
-  height: 1500px;
+  width: 150px;
+  height: 150px;
   mix-blend-mode: difference;
   background-color: var(--clr-text-primary);
   border: none;
