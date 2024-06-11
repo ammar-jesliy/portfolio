@@ -303,7 +303,7 @@
 }
 
 .projects .img:hover .arrow-anim {
-  transform: translate(500%, -437%);
+  transform: translate(500%, -420%);
   transition: all 0.5s ease-out;
 }
 

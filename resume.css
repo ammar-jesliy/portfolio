@@ -1,3 +1,18 @@
+:root {
+  color-scheme: dark;
+  --clr-bg: #1d1e24;
+  --clr-text-primary: #fff;
+  --clr-text-secondary: #000;
+  --clr-accent: #5a5e66;
+  --clr-bg-bento-dark: #30333a;
+  --clr-bg-bento-light: #8d99ae;
+
+  --bento-border-radius: 28px;
+  --bento-gap: 16px;
+
+  --content-max-width: 1000px;
+}
+
 /* ======================== Resume ===========================*/
 
 .resume {

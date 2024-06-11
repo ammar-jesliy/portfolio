@@ -1,0 +1,179 @@
+:root {
+  color-scheme: dark;
+  --clr-bg: #1d1e24;
+  --clr-text-primary: #fff;
+  --clr-text-secondary: #000;
+  --clr-accent: #5a5e66;
+  --clr-bg-bento-dark: #30333a;
+  --clr-bg-bento-light: #8d99ae;
+
+  --bento-border-radius: 28px;
+  --bento-gap: 16px;
+
+  --content-max-width: 1000px;
+}
+
+/*======================= Projects page main section =========================*/
+
+.projects {
+  padding: 2rem 3rem 6rem 3rem;
+  align-content: center;
+
+  @media (max-width: 780px) {
+    & {
+      padding-inline: 1rem;
+    }
+  }
+}
+
+.projects-content {
+  position: relative;
+  z-index: 3;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.projects-content {
+  & .project {
+    max-width: 1000px;
+    background-color: var(--clr-bg-bento-dark);
+    border-radius: var(--bento-border-radius);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .head {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      & .text {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        max-width: 80%;
+
+        & .details {
+          flex: 4;
+
+          & h3 {
+            font-size: 40px;
+          }
+
+          & p {
+            font-size: clamp(16px, 1.5vw, 18px);
+            font-weight: 400;
+            color: var(--clr-bg-bento-light);
+          }
+        }
+
+        & > p {
+          flex: 6;
+          font-size: clamp(18px, 2vw, 24px);
+          font-weight: 500;
+        }
+
+        @media (max-width: 767px) {
+          & {
+            flex-direction: column;
+            align-items: start;
+          }
+        }
+      }
+
+      & .btn {
+        display: flex;
+        align-self: flex-start;
+        max-width: 15%;
+        width: 60px;
+        border-radius: 50%;
+        font-size: clamp(12px, 1.7vw, 18px);
+        color: var(--clr-bg-bento-dark);
+        background-color: var(--clr-bg-bento-light);
+        font-weight: 700;
+        aspect-ratio: 1;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+
+        .arrow-anim {
+          width: fit-content;
+          transition: all 0.5s ease-out;
+        }
+
+        & svg {
+          width: 5vw;
+          max-width: 25px;
+
+          & path {
+            stroke: var(--clr-bg-bento-dark);
+          }
+        }
+
+        & svg:nth-child(1) {
+          position: absolute;
+          transform: translate(-500%, 500%);
+          width: 5vw;
+          max-width: 25px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        & {
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    & .image {
+      width: 100%;
+      background-color: var(--clr-bg-bento-light);
+      border-radius: calc(var(--bento-border-radius) - 12px);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 767px) {
+        & {
+          aspect-ratio: 4 / 3;
+        }
+      }
+
+      @media (max-height: 500px) {
+        & {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.projects .project:hover .arrow-anim {
+  transform: translate(500%, -420%);
+  transition: all 0.5s ease-out;
+}
+
+.projects .project:hover .btn {
+  background-color: var(--clr-text-primary);
+  transition: all 0.5s ease;
+}
+
+.projects .project:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
