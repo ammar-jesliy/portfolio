@@ -65,7 +65,7 @@ if (!isTouchDevice()) {
     });
   });
 
-  document.querySelectorAll("a").forEach((p) => {
+  document.querySelectorAll("a:not(.header-logo, .header-logo-shrinked)").forEach((p) => {
     p.addEventListener("mouseenter", () => {
       cursor.classList.add("hover-link");
       cursorText.innerHTML = "visit.";
