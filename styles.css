@@ -488,23 +488,38 @@ svg {
       & .btn {
         display: flex;
         align-self: flex-start;
-        background-color: var(--clr-bg-bento-light);
         max-width: 15%;
         width: 60px;
         border-radius: 50%;
         font-size: clamp(12px, 1.7vw, 18px);
         color: var(--clr-bg-bento-dark);
+        background-color: var(--clr-bg-bento-light);
         font-weight: 700;
         aspect-ratio: 1;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
+        position: relative;
+
+        .arrow-anim {
+          width: fit-content;
+          transition: all 0.5s ease-out;
+        }
 
         & svg {
-          width: 40%;
+          width: 5vw;
+          max-width: 25px;
 
           & path {
             stroke: var(--clr-bg-bento-dark);
           }
+        }
+
+        & svg:nth-child(1) {
+          position: absolute;
+          transform: translate(-500%, 500%);
+          width: 5vw;
+          max-width: 25px;
         }
       }
 
@@ -541,6 +556,22 @@ svg {
       }
     }
   }
+}
+
+.projects .img:hover .arrow-anim {
+  transform: translate(500%, -437%);
+  transition: all 0.5s ease-out;
+}
+
+.projects .img:hover .btn {
+  background-color: var(--clr-text-primary);
+  transition: all 0.5s ease;
+}
+
+.projects .img:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /* =================== about section ======================*/
@@ -930,19 +961,39 @@ svg {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-  }
+    position: relative;
 
-  & svg {
-    width: 20px;
+    .arrow-anim {
+      width: fit-content;
+      transition: all 0.5s ease-out;
+    }
 
-    & path {
-      stroke: var(--clr-accent);
+    & svg {
+      width: 5vw;
+      max-width: 18px;
+
+      & path {
+        stroke: var(--clr-accent);
+      }
+    }
+
+    & svg:nth-child(1) {
+      position: absolute;
+      transform: translate(-500%, 500%);
+      width: 5vw;
+      max-width: 18px;
     }
   }
 }
 
-.button:hover img {
-  animation: arrow 0.7s ease-out infinite;
+.portfolio-content a:hover .arrow-anim {
+  transform: translate(500%, -410%);
+  transition: all 0.5s ease-out;
+}
+
+.portfolio-content a:hover .arrow {
+  background-color: var(--clr-text-primary);
+  transition: all 0.5s ease;
 }
 
 /* ======================= contact section ==================*/
