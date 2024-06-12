@@ -764,20 +764,6 @@
             `-=${fadeDuration}`
           );
 
-        gsap.to(lastCard, {
-          scrollTrigger: {
-            trigger: next,
-            start: "100 top",
-            end: "120 top",
-            scrub: 1,
-          },
-          opacity: 0,
-          duration: 0.1,
-          onComplete: () => {
-            lastCard.style.display = "none";
-          },
-        });
-
         gsap.from(".about-content > div", {
           scrollTrigger: {
             trigger: ".about",
