@@ -41,14 +41,16 @@ if (!isTouchDevice()) {
     mouseY = e.clientY;
   });
 
-  document.querySelectorAll("p, h1, h2, h3, .hero-text").forEach((p) => {
-    p.addEventListener("mouseenter", () => {
-      cursor.classList.add("hover");
+  document
+    .querySelectorAll("p, h1, h2, h3, .hero-text, .nav-toggle")
+    .forEach((p) => {
+      p.addEventListener("mouseenter", () => {
+        cursor.classList.add("hover");
+      });
+      p.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover");
+      });
     });
-    p.addEventListener("mouseleave", () => {
-      cursor.classList.remove("hover");
-    });
-  });
 
   document.querySelectorAll("input, textarea").forEach((p) => {
     p.addEventListener("mouseenter", () => {
@@ -65,16 +67,18 @@ if (!isTouchDevice()) {
     });
   });
 
-  document.querySelectorAll("a:not(.header-logo, .header-logo-shrinked)").forEach((p) => {
-    p.addEventListener("mouseenter", () => {
-      cursor.classList.add("hover-link");
-      cursorText.innerHTML = "visit.";
+  document
+    .querySelectorAll("a:not(.header-logo, .header-logo-shrinked)")
+    .forEach((p) => {
+      p.addEventListener("mouseenter", () => {
+        cursor.classList.add("hover-link");
+        cursorText.innerHTML = "visit.";
+      });
+      p.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover-link");
+        cursorText.innerHTML = "";
+      });
     });
-    p.addEventListener("mouseleave", () => {
-      cursor.classList.remove("hover-link");
-      cursorText.innerHTML = "";
-    });
-  });
 
   const nameSvg = document.querySelector(
     ".header-logo svg, .header-logo-shrinked svg"
@@ -87,16 +91,18 @@ if (!isTouchDevice()) {
     cursor.classList.remove("hover-invert");
   });
 
-  document.querySelectorAll(".projects a.img").forEach((p) => {
-    p.addEventListener("mouseenter", () => {
-      cursor.classList.add("hover-project");
-      cursorText.innerHTML = "view.";
+  document
+    .querySelectorAll(".projects a.img, .projects .project")
+    .forEach((p) => {
+      p.addEventListener("mouseenter", () => {
+        cursor.classList.add("hover-project");
+        cursorText.innerHTML = "view.";
+      });
+      p.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover-project");
+        cursorText.innerHTML = "";
+      });
     });
-    p.addEventListener("mouseleave", () => {
-      cursor.classList.remove("hover-project");
-      cursorText.innerHTML = "";
-    });
-  });
 
   function animate() {
     cursor.style.cssText = "left: " + mouseX + "px; top: " + mouseY + "px;";

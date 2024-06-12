@@ -28,6 +28,7 @@
   <body>
     <div class="content">
       <div class="bg"></div>
+
       <a href="index.html" class="header-logo-shrinked">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +63,7 @@
           />
         </svg>
       </a>
+
       <header>
         <nav>
           <button class="nav-toggle" onclick="toggleMenu()">Menu</button>
@@ -234,11 +236,10 @@
           </a>
         </div>
       </section>
-
-
     </div>
 
-
+    <div class="cursor-text"></div>
+    <div class="cursor"></div>
 
     <div class="spacer-transparent"></div>
 
@@ -262,13 +263,10 @@
       </div>
     </section>
 
-    <div class="cursor-text"></div>
-    <div class="cursor"></div>
-
+    <!-- Imported packages -->
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
     <script>
       const lenis = new Lenis({
         duration: 1, // Increase duration for slower scrolling
@@ -287,6 +285,7 @@
       requestAnimationFrame(raf);
     </script>
 
+    <!-- Gsap animation script tags -->
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         gsap.registerPlugin(ScrollTrigger);

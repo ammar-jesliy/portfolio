@@ -983,6 +983,11 @@
       font-weight: 400;
       padding: 25px;
       overflow: hidden;
+
+      & .word-1,
+      .word-2 {
+        display: flex;
+      }
     }
 
     & .row-2 {

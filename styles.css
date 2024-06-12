@@ -5,15 +5,15 @@
   --clr-bg: #1d1e24;
   --clr-text-primary: #fff;
   --clr-text-secondary: #000;
-  --clr-accent: #5a5e66;
   --clr-bg-bento-dark: #30333a;
   --clr-bg-bento-light: #8d99ae;
+  --clr-accent: #5a5e66;
+  --clr-accent-2: #5e4ae3;
 
   --bento-border-radius: 28px;
   --bento-gap: 16px;
 
   --content-max-width: 1000px;
-  
 }
 
 ::-webkit-scrollbar {
@@ -51,6 +51,8 @@ body {
   z-index: 2;
   width: 100vw;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
   & .bg {
     position: absolute;
@@ -76,10 +78,11 @@ body {
 .cursor {
   position: fixed;
   z-index: 9998;
-  width: 35px;
-  height: 35px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   border: 1px solid white;
+  background-color: var(--clr-text-primary);
   pointer-events: none;
   transform: translate(-50%, -50%);
   will-change: transform;
@@ -111,7 +114,6 @@ body {
   height: 70px;
   background-color: var(--clr-text-primary);
   opacity: 0.5;
-  color: var(--clr-text-secondary);
   align-content: center;
   text-align: center;
 }
@@ -128,9 +130,9 @@ body {
 .cursor.hover-project {
   width: 75px;
   height: 75px;
-  background-color: var(--clr-text-primary);
-  opacity: 0.5;
-  color: var(--clr-text-secondary);
+  opacity: 1;
+  border: none;
+  background-color: var(--clr-accent-2);
   transition: all 0.1s;
 }
 
@@ -197,7 +199,7 @@ header ul {
 }
 
 .inactive-link a:hover {
-  color: var(--clr-text-primary);
+  opacity: 1;
   transition: all 0.5s ease;
 }
 
@@ -205,7 +207,6 @@ svg {
   width: 100%;
   height: auto;
 }
-
 
 @media (max-width: 780px) {
   .header-logo {
@@ -270,78 +271,77 @@ svg {
   }
 }
 
-
 /* ========================= Footer ======================== */
 
 .footer {
-    width: 100%;
-    height: 50vh;
-    background-color: var(--clr-bg-bento-light);
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
-  
-    & .footer-content {
-      max-width: var(--content-max-width);
-      margin-inline: auto;
-      padding: 2rem 3rem;
-      height: 100%;
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-  
-      & .links {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding-bottom: 1.5rem;
-  
-        & > div {
-          height: fit-content;
-        }
-  
-        & h4 {
-          color: var(--clr-text-secondary);
-          font-size: 18px;
-          width: fit-content;
-        }
-  
-        & .site-link a {
-          text-decoration: none;
-        }
-  
-        & p {
-          height: auto;
-        }
-  
-        & a {
-          color: var(--clr-text-secondary);
-          font-size: 16px;
-        }
-      }
-    }
-  
-    & .copyright {
-      & p {
-        color: var(--clr-text-secondary);
-        font-size: clamp(12px, 1.5vw, 14px);
-      }
-    }
-  }
-  
-  @media (max-width: 780px) {
-    .footer .footer-content {
-      padding: 2rem 1em;
-      height: 100%;
-    }
-  }
-  
-  .spacer-transparent {
-    height: 50vh;
-    background-color: transparent;
-    opacity: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: var(--clr-bg-bento-light);
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+
+  & .footer-content {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding: 2rem 3rem;
+    height: 100%;
     position: relative;
-    z-index: -999;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    & .links {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-bottom: 1.5rem;
+
+      & > div {
+        height: fit-content;
+      }
+
+      & h4 {
+        color: var(--clr-text-secondary);
+        font-size: 18px;
+        width: fit-content;
+      }
+
+      & .site-link a {
+        text-decoration: none;
+      }
+
+      & p {
+        height: auto;
+      }
+
+      & a {
+        color: var(--clr-text-secondary);
+        font-size: 16px;
+      }
+    }
   }
+
+  & .copyright {
+    & p {
+      color: var(--clr-text-secondary);
+      font-size: clamp(12px, 1.5vw, 14px);
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .footer .footer-content {
+    padding: 2rem 1em;
+    height: 100%;
+  }
+}
+
+.spacer-transparent {
+  height: 50vh;
+  background-color: transparent;
+  opacity: 0;
+  position: relative;
+  z-index: -999;
+}
