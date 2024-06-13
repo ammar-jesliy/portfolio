@@ -13,9 +13,13 @@
       name="google-site-verification"
       content="mn8b6fwNXVwkRPilAhUg4aQv7SLqSS5SDPEhTXG4b0Q"
     />
-    <link rel="icon" type="image/png" href="images/portfolio-logo-icon.png" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="resume.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="src/images/portfolio-logo-icon.png"
+    />
+    <link rel="stylesheet" href="src/resume.css" />
+    <link rel="stylesheet" href="src/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -176,6 +180,17 @@
           },
           1
         );
+
+        gsap.from(".footer", {
+          scrollTrigger: {
+            trigger: ".content",
+            start: "bottom bottom",
+            end: "bottom 60%",
+            scrub: 1,
+          },
+          y: 100,
+          opacity: 0,
+        });
       });
     </script>
 

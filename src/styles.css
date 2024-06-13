@@ -1,4 +1,3 @@
-@import url(node_modules/normalize.css/normalize.css);
 
 :root {
   color-scheme: dark;
@@ -38,7 +37,7 @@ a {
 }
 
 body {
-  background-color: var(--clr-bg-bento-light);
+  background-color: var(--clr-bg);
 }
 
 .content {
@@ -339,7 +338,7 @@ svg {
 }
 
 .spacer-transparent {
-  height: 50vh;
+  height: calc(50vh - 50px);
   background-color: transparent;
   opacity: 0;
   position: relative;
