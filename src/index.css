@@ -52,6 +52,7 @@
   background-color: var(--clr-bg-bento-light);
   border-radius: 40px;
   overflow: hidden;
+  will-change: transform;
 
   & video {
     width: 100%;
@@ -582,7 +583,7 @@
 @media (max-width: 780px) {
   .about {
     height: fit-content;
-    padding: 2rem 1em;
+    padding: 2rem 1rem var(--bento-gap) 1rem;
   }
 
   .about-content {
@@ -636,7 +637,7 @@
 @media (max-width: 780px) {
   .portfolio {
     height: fit-content;
-    padding: 2rem 1em;
+    padding: 0 1rem var(--bento-gap) 1rem;
   }
 }
 
@@ -750,7 +751,7 @@
   @media (max-width: 780px) {
     & {
       height: fit-content;
-      padding: 2rem 1em;
+      padding: 0 1rem var(--bento-gap) 1rem;
     }
   }
 
