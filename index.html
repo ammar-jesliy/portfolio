@@ -330,7 +330,7 @@
         <div class="about-content">
           <div class="left-col">
             <div class="row-1">
-              <div class="left-col">
+              <div class="left-col bento-item">
                 <img
                   src="src/images/icons8-spring-in-motion-90.png"
                   alt="icon"
@@ -345,11 +345,11 @@
                 </p>
               </div>
               <div class="right-col">
-                <div class="row-1">
+                <div class="row-1 bento-item">
                   <p>Undergraduate at <br />University of Westminster</p>
                   <img src="src/images/uowLogo.svg" alt="UoW logo" />
                 </div>
-                <div class="row-2">
+                <div class="row-2 bento-item">
                   <img
                     src="src/images/icons8-about-100.png"
                     alt="about-icon"
@@ -361,18 +361,18 @@
               </div>
             </div>
             <div class="row-2">
-              <div class="left-col">
+              <div class="left-col bento-item">
                 <p>Currently Freelancing</p>
                 <img src="src/images/Code.svg" alt="code-icon" width="60" />
               </div>
-              <div class="right-col">
+              <div class="right-col bento-item">
                 <p>19</p>
                 <p class="sub">years old</p>
               </div>
             </div>
           </div>
           <div class="right-col">
-            <div class="row-1">
+            <div class="row-1 bento-item">
               <img
                 src="src/images/globe.svg"
                 alt="globe-icon"
@@ -382,7 +382,7 @@
               <h2>Based in <br />Beruwala, <br />Sri Lanka.</h2>
               <p>GMT-5.30</p>
             </div>
-            <div class="row-2">
+            <div class="row-2 bento-item">
               <img
                 src="src/images/Skills.svg"
                 alt="skills-icon"
@@ -398,7 +398,7 @@
 
       <section class="portfolio">
         <div class="portfolio-content">
-          <div class="left-col">
+          <div class="left-col bento-item">
             <p>I Create & Craft ideas.</p>
             <a class="button" href="projects.html">
               <p>See my work</p>
@@ -440,7 +440,7 @@
               </div>
             </a>
           </div>
-          <div class="right-col">
+          <div class="right-col bento-item">
             <p>Explore my professional profile.</p>
             <a class="button" href="resume.html">
               <p>My resume</p>
@@ -487,7 +487,7 @@
 
       <section class="contact">
         <div class="contact-content">
-          <div class="left-col">
+          <div class="left-col bento-item">
             <img src="src/images/icons8-mylivn-250 (1).png" alt="icon" />
             <h2>Let's connect.</h2>
             <p>
@@ -496,7 +496,7 @@
             </p>
           </div>
           <div class="right-col">
-            <div class="row-1">
+            <div class="row-1 bento-item">
               <h3>Send me a <br />message!</h3>
               <form name="message" method="POST" netlify>
                 <div class="row-1">
@@ -526,21 +526,21 @@
               </form>
             </div>
             <div class="row-2">
-              <div class="col-1">
+              <div class="col-1 bento-item">
                 <a href="https://github.com/ammar-jesliy"
                   ><img
                     src="src/images/icons8-github-120.png"
                     alt="Github-profile"
                 /></a>
               </div>
-              <div class="col-2">
+              <div class="col-2 bento-item">
                 <a href="https://x.com/AmmarJesliy"
                   ><img
                     src="src/images/icons8-twitterx-128.png"
                     alt="X-profile"
                 /></a>
               </div>
-              <div class="col-3">
+              <div class="col-3 bento-item">
                 <a href="www.linkedin.com/in/ammar-jesliy"
                   ><img
                     src="src/images/icons8-linkedin-150.png"
@@ -809,28 +809,25 @@
             },
           })
           .to(lastCardText, {
-            scale: 50, // Scale to cover the screen
-            ease: "none",
-            duration: 3,
+            scale: 30, // Scale to cover the screen
+            duration: fadeDuration,
           })
           .to(
             lastCard,
             {
               scale: 10,
-              ease: "none",
               duration: fadeDuration,
             },
             0
           )
-          .from(
-            next,
-            {
-              opacity: 0,
-              ease: "none",
-              duration: fadeDuration,
-            },
-            `-=${fadeDuration}`
-          );
+          // .from(
+          //   next,
+          //   {
+          //     opacity: 0,
+          //     duration: fadeDuration,
+          //   },
+          //   `-=${fadeDuration}`
+          // );
 
         gsap.from(".about-content > div", {
           scrollTrigger: {
@@ -876,6 +873,7 @@
             scrub: 1,
           },
           y: -100,
+          willChange: 'transform'
         });
       });
     </script>

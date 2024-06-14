@@ -61,6 +61,10 @@ body {
   }
 }
 
+.bento-item {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
 /*=========================== cursor ==========================*/
 
 .cursor-text {
@@ -277,15 +281,13 @@ svg {
   background-color: var(--clr-bg-bento-light);
   position: relative;
   bottom: 0;
-  z-index: 1;
+  will-change: transform;
 
   & .footer-content {
     max-width: var(--content-max-width);
     margin-inline: auto;
     padding: 2rem 3rem;
     height: 100%;
-    position: relative;
-    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -301,9 +303,9 @@ svg {
 
     & .email-btn {
       margin-bottom: 30px;
+      
       & a {
         border: solid 2px var(--clr-bg-bento-dark);
-
         color: var(--clr-bg);
         padding: 1rem 2rem;
         border-radius: 32px;

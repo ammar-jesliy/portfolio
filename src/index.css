@@ -157,12 +157,13 @@
     & .img {
       height: calc(50vh + 200px);
       background-color: var(--clr-bg-bento-light);
+      backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
       justify-content: center;
 
       & .lg-text {
-        font-size: 50px;
+        font-size: clamp(52px, 10vw, 100px);
         font-weight: 700;
         color: var(--clr-bg);
         transform-origin: 46.6% 72%;
