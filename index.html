@@ -865,16 +865,16 @@
           stagger: 0.1,
         });
 
-        // gsap.from(".footer", {
-        //   scrollTrigger: {
-        //     trigger: ".content",
-        //     start: "bottom bottom",
-        //     end: "bottom 50%",
-        //     scrub: 1,
-        //   },
-        //   y: -100,
-        //   willChange: 'transform'
-        // });
+        gsap.from(".footer", {
+          scrollTrigger: {
+            trigger: ".content",
+            start: "bottom bottom",
+            end: "bottom 50%",
+            scrub: 1,
+          },
+          y: -100,
+          willChange: 'transform'
+        });
       });
     </script>
 
