@@ -281,6 +281,7 @@ svg {
   background-color: var(--clr-bg-bento-light);
   position: relative;
   bottom: 0;
+  z-index: 1;
   will-change: transform;
 
   & .footer-content {
