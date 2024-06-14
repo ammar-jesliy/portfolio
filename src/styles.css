@@ -279,10 +279,7 @@ svg {
   width: 100%;
   height: 50vh;
   background-color: var(--clr-bg-bento-light);
-  position: relative;
-  bottom: 0;
   z-index: 1;
-  will-change: transform;
 
   & .footer-content {
     max-width: var(--content-max-width);
