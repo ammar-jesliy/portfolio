@@ -114,3 +114,9 @@ if (!isTouchDevice()) {
 } else {
   cursor.style.display = "none";
 }
+
+const timeZone = "Asia/Colombo";
+
+const now = new Date().toLocaleTimeString("en-US", {timeZone, hour: "2-digit", minute: "numeric", hour12: true});
+
+document.querySelector(".time p").innerHTML = `${now} GMT+5:30`;

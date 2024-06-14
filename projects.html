@@ -252,20 +252,32 @@
 
     <section class="footer">
       <div class="footer-content">
-        <div class="links">
-          <div class="contact-link">
-            <h4>Contact</h4>
-            <p><a href="mailto:ammarjc1@gmail.com">ammarjc1@gmail.com</a></p>
-          </div>
-          <div class="site-link">
-            <h4>Site</h4>
-            <p><a href="index.html">home.</a></p>
-            <p><a href="projects.html">projects.</a></p>
-            <p><a href="resume.html">resume.</a></p>
-          </div>
+        <div class="email-btn">
+          <a href="mailto:ammarjc1@gmail.com">ammarjc1@gmail.com</a>
         </div>
-        <div class="copyright">
-          <p>&copy; 2024 ammar jesliy. all rights reserved.</p>
+        <div class="divider"></div>
+        <div class="main-footer">
+          <div class="left">
+            <div class="version">
+              <h4>VERSION</h4>
+              <p>2024 &copy; Edition</p>
+            </div>
+            <div class="time">
+              <h4>LOCAL TIME</h4>
+              <p></p>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="right">
+            <div class="socials">
+              <h4>SOCIALS</h4>
+              <div class="links">
+                <a href="https://github.com/ammar-jesliy">Github</a>
+                <a href="https://x.com/AmmarJesliy">X (Twitter)</a>
+                <a href="www.linkedin.com/in/ammar-jesliy">LinkedIn</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -343,11 +355,10 @@
           scrollTrigger: {
             trigger: ".content",
             start: "bottom bottom",
-            end: "bottom 60%",
+            end: "bottom 50%",
             scrub: 1,
           },
-          y: 100,
-          opacity: 0,
+          y: -100,
         });
       });
     </script>

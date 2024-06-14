@@ -1,4 +1,3 @@
-
 :root {
   color-scheme: dark;
   --clr-bg: #1d1e24;
@@ -37,7 +36,7 @@ a {
 }
 
 body {
-  background-color: var(--clr-bg);
+  background-color: var(--clr-bg-bento-light);
 }
 
 .content {
@@ -276,7 +275,7 @@ svg {
   width: 100%;
   height: 50vh;
   background-color: var(--clr-bg-bento-light);
-  position: fixed;
+  position: relative;
   bottom: 0;
   z-index: 1;
 
@@ -290,42 +289,63 @@ svg {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
 
-    & .links {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding-bottom: 1.5rem;
+    & .divider {
+      width: 100%;
+      height: 2px;
+      background-color: var(--clr-accent);
+      border-radius: 50%;
+      margin: 2rem 0;
+    }
 
-      & > div {
-        height: fit-content;
-      }
-
-      & h4 {
-        color: var(--clr-text-secondary);
-        font-size: 18px;
-        width: fit-content;
-      }
-
-      & .site-link a {
-        text-decoration: none;
-      }
-
-      & p {
-        height: auto;
-      }
-
+    & .email-btn {
+      margin-bottom: 30px;
       & a {
-        color: var(--clr-text-secondary);
-        font-size: 16px;
+        border: solid 2px var(--clr-bg-bento-dark);
+
+        color: var(--clr-bg);
+        padding: 1rem 2rem;
+        border-radius: 32px;
+        font-size: 18px;
+        font-weight: 500;
       }
     }
-  }
 
-  & .copyright {
-    & p {
-      color: var(--clr-text-secondary);
-      font-size: clamp(12px, 1.5vw, 14px);
+    & .main-footer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 20px;
+
+      & h4 {
+        color: var(--clr-accent);
+        font-size: 14px;
+      }
+
+      & p,
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--clr-text-secondary);
+      }
+
+      & .divider {
+        display: none;
+      }
+
+      & .left {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      & .right {
+        & .links {
+          display: flex;
+          gap: 20px;
+        }
+      }
     }
   }
 }
@@ -335,12 +355,24 @@ svg {
     padding: 2rem 1em;
     height: 100%;
   }
+
+  .main-footer {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .main-footer .divider {
+    display: block !important;
+    margin: 8px 0 !important;
+  }
+
+  .left {
+    width: 100% !important;
+  }
 }
 
-.spacer-transparent {
-  height: calc(50vh - 50px);
-  background-color: transparent;
-  opacity: 0;
-  position: relative;
-  z-index: -999;
+@media (max-height: 575px) {
+  .footer {
+    height: 80vh;
+  }
 }
