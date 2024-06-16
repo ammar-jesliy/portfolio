@@ -527,21 +527,21 @@
             </div>
             <div class="row-2">
               <div class="col-1 bento-item">
-                <a href="https://github.com/ammar-jesliy"
+                <a href="https://github.com/ammar-jesliy" target="_blank"
                   ><img
                     src="src/images/icons8-github-120.png"
                     alt="Github-profile"
                 /></a>
               </div>
               <div class="col-2 bento-item">
-                <a href="https://x.com/AmmarJesliy"
+                <a href="https://x.com/AmmarJesliy" target="_blank"
                   ><img
                     src="src/images/icons8-twitterx-128.png"
                     alt="X-profile"
                 /></a>
               </div>
               <div class="col-3 bento-item">
-                <a href="www.linkedin.com/in/ammar-jesliy"
+                <a href="www.linkedin.com/in/ammar-jesliy" target="_blank"
                   ><img
                     src="src/images/icons8-linkedin-150.png"
                     alt="Linkedin-profile"
@@ -557,8 +557,8 @@
 
     <section class="footer">
       <div class="footer-content">
-        <div class="email-btn">
-          <a href="mailto:ammarjc1@gmail.com">ammarjc1@gmail.com</a>
+        <div class="email-btn magnetic">
+          <a href="mailto:ammarjc1@gmail.com">Contact</a>
         </div>
         <div class="divider"></div>
         <div class="main-footer">
@@ -577,9 +577,15 @@
             <div class="socials">
               <h4>SOCIALS</h4>
               <div class="links">
-                <a href="https://github.com/ammar-jesliy">Github</a>
-                <a href="https://x.com/AmmarJesliy">X (Twitter)</a>
-                <a href="www.linkedin.com/in/ammar-jesliy">LinkedIn</a>
+                <a href="https://github.com/ammar-jesliy" target="_blank"
+                  >Github</a
+                >
+                <a href="https://x.com/AmmarJesliy" target="_blank"
+                  >X (Twitter)</a
+                >
+                <a href="www.linkedin.com/in/ammar-jesliy" target="_blank"
+                  >LinkedIn</a
+                >
               </div>
             </div>
           </div>
@@ -819,15 +825,15 @@
               duration: fadeDuration,
             },
             0
-          )
-          // .from(
-          //   next,
-          //   {
-          //     opacity: 0,
-          //     duration: fadeDuration,
-          //   },
-          //   `-=${fadeDuration}`
-          // );
+          );
+        // .from(
+        //   next,
+        //   {
+        //     opacity: 0,
+        //     duration: fadeDuration,
+        //   },
+        //   `-=${fadeDuration}`
+        // );
 
         gsap.from(".about-content > div", {
           scrollTrigger: {
@@ -866,15 +872,48 @@
         });
 
         // The below does not work on certain IOS devices
-        gsap.from(".footer-content > *", {
-          scrollTrigger: {
-            trigger: ".content",
-            start: "bottom bottom",
-            end: "bottom 50%",
-            scrub: 1,
-          },
-          y: -100,
+        // gsap.from(".footer-content > *", {
+        //   scrollTrigger: {
+        //     trigger: ".content",
+        //     start: "bottom bottom",
+        //     end: "bottom 50%",
+        //     scrub: 1,
+        //   },
+        //   y: -100,
+        // });
+
+        // magnetic button effect
+        // from via: https://codepen.io/tdesero/pen/RmoxQg
+        var magnets = document.querySelectorAll(".magnetic");
+        var strength = 50;
+
+        magnets.forEach((magnet) => {
+          magnet.addEventListener("mousemove", moveMagnet);
+          magnet.addEventListener("mouseout", function (event) {
+            TweenMax.to(event.currentTarget, 1, {
+              x: 0,
+              y: 0,
+              ease: Elastic.easeOut,
+            });
+          });
         });
+
+        function moveMagnet(event) {
+          var magnetButton = event.currentTarget;
+          var bounding = magnetButton.getBoundingClientRect();
+
+          TweenMax.to(magnetButton, 1, {
+            x:
+              ((event.clientX - bounding.left) / magnetButton.offsetWidth -
+                0.5) *
+              strength,
+            y:
+              ((event.clientY - bounding.top) / magnetButton.offsetHeight -
+                0.5) *
+              strength,
+            ease: Power4.easeOut,
+          });
+        }
       });
     </script>
 

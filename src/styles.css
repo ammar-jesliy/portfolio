@@ -62,7 +62,15 @@ body {
 }
 
 .bento-item {
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.magnetic {
+  transition: all 0.1s ease;
+  margin: -100px;
+  display: inline-block;
+  padding: 100px;
 }
 
 /*=========================== cursor ==========================*/
@@ -298,13 +306,13 @@ svg {
     }
 
     & .email-btn {
-      margin-bottom: 30px;
-      
+      padding-bottom: 120px;
+
       & a {
-        border: solid 2px var(--clr-bg-bento-dark);
-        color: var(--clr-bg);
+        background-color: var(--clr-bg-bento-dark);
+        color: var(--clr-bg-bento-light);
         padding: 1rem 2rem;
-        border-radius: 32px;
+        border-radius: 16px;
         font-size: 18px;
         font-weight: 500;
       }

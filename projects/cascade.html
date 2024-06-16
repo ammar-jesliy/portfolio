@@ -89,17 +89,26 @@
             </div>
             <div class="intro-text">
               <p>
-                A Task Management Web Application. Designed and Developed for Simplicity and Efficiency in managing tasks.
+                A Task Management Web Application. Designed and Developed for
+                Simplicity and Efficiency in managing tasks.
               </p>
 
               <div class="table">
                 <div class="row">
                   <div class="label">Site</div>
-                  <div class="value"><a href="#">cascade.netlify.app</a></div>
+                  <div class="value">
+                    <a href="#" target="_blank">cascade.netlify.app</a>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="label">Source Code</div>
-                  <div class="value"><a href="https://github.com/ammar-jesliy/cascade">Github</a></div>
+                  <div class="value">
+                    <a
+                      href="https://github.com/ammar-jesliy/cascade"
+                      target="_blank"
+                      >Github</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -109,7 +118,16 @@
             <div class="left">
               <h3>Details</h3>
               <p>
-                I built this task management website using React for a flexible and responsive user interface. I used the Appwrite API for backend operations to manage data securely and efficiently. The design was created in Figma to ensure a user-friendly and cohesive look. Tailwind CSS was used for styling, making it easy to maintain a consistent appearance throughout the site. I improved performance and data handling with React Query, while Vite.js enabled fast development and efficient bundling. The website is optimized for different devices, ensuring smooth usability on any screen size.
+                I built this task management website using React for a flexible
+                and responsive user interface. I used the Appwrite API for
+                backend operations to manage data securely and efficiently. The
+                design was created in Figma to ensure a user-friendly and
+                cohesive look. Tailwind CSS was used for styling, making it easy
+                to maintain a consistent appearance throughout the site. I
+                improved performance and data handling with React Query, while
+                Vite.js enabled fast development and efficient bundling. The
+                website is optimized for different devices, ensuring smooth
+                usability on any screen size.
               </p>
             </div>
             <div class="right">
@@ -143,8 +161,8 @@
 
     <section class="footer">
       <div class="footer-content">
-        <div class="email-btn">
-          <a href="mailto:ammarjc1@gmail.com">ammarjc1@gmail.com</a>
+        <div class="email-btn magnetic">
+          <a href="mailto:ammarjc1@gmail.com">Contact</a>
         </div>
         <div class="divider"></div>
         <div class="main-footer">
@@ -233,15 +251,49 @@
           0.5
         );
 
-        gsap.from(".footer-content", {
-          scrollTrigger: {
-            trigger: ".content",
-            start: "bottom bottom",
-            end: "bottom 50%",
-            scrub: 1,
-          },
-          y: -100,
+        // gsap.from(".footer-content", {
+        //   scrollTrigger: {
+        //     trigger: ".content",
+        //     start: "bottom bottom",
+        //     end: "bottom 50%",
+        //     scrub: 1,
+        //   },
+        //   y: -100,
+        // });
+
+
+        // magnetic button effect
+        // from via: https://codepen.io/tdesero/pen/RmoxQg
+        var magnets = document.querySelectorAll(".magnetic");
+        var strength = 50;
+
+        magnets.forEach((magnet) => {
+          magnet.addEventListener("mousemove", moveMagnet);
+          magnet.addEventListener("mouseout", function (event) {
+            TweenMax.to(event.currentTarget, 1, {
+              x: 0,
+              y: 0,
+              ease: Elastic.easeOut,
+            });
+          });
         });
+
+        function moveMagnet(event) {
+          var magnetButton = event.currentTarget;
+          var bounding = magnetButton.getBoundingClientRect();
+
+          TweenMax.to(magnetButton, 1, {
+            x:
+              ((event.clientX - bounding.left) / magnetButton.offsetWidth -
+                0.5) *
+              strength,
+            y:
+              ((event.clientY - bounding.top) / magnetButton.offsetHeight -
+                0.5) *
+              strength,
+            ease: Power4.easeOut,
+          });
+        }
       });
     </script>
 

@@ -88,9 +88,7 @@
               <p>2022</p>
             </div>
             <div class="intro-text">
-              <p>
-                A Stock Trading Web application.
-              </p>
+              <p>A Stock Trading Web application.</p>
 
               <div class="table">
                 <div class="row">
@@ -99,7 +97,13 @@
                 </div>
                 <div class="row">
                   <div class="label">Source Code</div>
-                  <div class="value"><a href="https://github.com/ammar-jesliy/finance">Github</a></div>
+                  <div class="value">
+                    <a
+                      href="https://github.com/ammar-jesliy/finance"
+                      target="_blank"
+                      >Github</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -108,7 +112,13 @@
             <div class="left">
               <h3>Details</h3>
               <p>
-                As part of Harvard's CS50x course, I created this stock trading web application using Flask and SQLite for a reliable backend and streamlined data management. HTML, CSS, and Jinja templating were employed to craft a user-friendly interface, enabling dynamic content rendering. I integrated the IEX API to fetch real-time stock prices, ensuring users have access to accurate market information.
+                As part of Harvard's CS50x course, I created this stock trading
+                web application using Flask and SQLite for a reliable backend
+                and streamlined data management. HTML, CSS, and Jinja templating
+                were employed to craft a user-friendly interface, enabling
+                dynamic content rendering. I integrated the IEX API to fetch
+                real-time stock prices, ensuring users have access to accurate
+                market information.
               </p>
             </div>
             <div class="right">
@@ -142,8 +152,8 @@
 
     <section class="footer">
       <div class="footer-content">
-        <div class="email-btn">
-          <a href="mailto:ammarjc1@gmail.com">ammarjc1@gmail.com</a>
+        <div class="email-btn magnetic">
+          <a href="mailto:ammarjc1@gmail.com">Contact</a>
         </div>
         <div class="divider"></div>
         <div class="main-footer">
@@ -232,15 +242,48 @@
           0.5
         );
 
-        gsap.from(".footer-content", {
-          scrollTrigger: {
-            trigger: ".content",
-            start: "bottom bottom",
-            end: "bottom 50%",
-            scrub: 1,
-          },
-          y: -100,
+        // gsap.from(".footer-content", {
+        //   scrollTrigger: {
+        //     trigger: ".content",
+        //     start: "bottom bottom",
+        //     end: "bottom 50%",
+        //     scrub: 1,
+        //   },
+        //   y: -100,
+        // });
+
+        // magnetic button effect
+        // from via: https://codepen.io/tdesero/pen/RmoxQg
+        var magnets = document.querySelectorAll(".magnetic");
+        var strength = 50;
+
+        magnets.forEach((magnet) => {
+          magnet.addEventListener("mousemove", moveMagnet);
+          magnet.addEventListener("mouseout", function (event) {
+            TweenMax.to(event.currentTarget, 1, {
+              x: 0,
+              y: 0,
+              ease: Elastic.easeOut,
+            });
+          });
         });
+
+        function moveMagnet(event) {
+          var magnetButton = event.currentTarget;
+          var bounding = magnetButton.getBoundingClientRect();
+
+          TweenMax.to(magnetButton, 1, {
+            x:
+              ((event.clientX - bounding.left) / magnetButton.offsetWidth -
+                0.5) *
+              strength,
+            y:
+              ((event.clientY - bounding.top) / magnetButton.offsetHeight -
+                0.5) *
+              strength,
+            ease: Power4.easeOut,
+          });
+        }
       });
     </script>
 

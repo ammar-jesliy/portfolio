@@ -888,6 +888,10 @@
     color: var(--clr-bg-bento-dark);
   }
 
+  & input::placeholder {
+    color: var(--clr-bg-bento-dark);
+  }
+
   & textarea {
     background-color: transparent;
     border: 4px solid var(--clr-bg-bento-dark);
@@ -899,6 +903,10 @@
     padding-block: 10px;
     color: var(--clr-bg-bento-dark);
     overflow: scroll;
+  }
+
+  & textarea::placeholder {
+    color: var(--clr-bg-bento-dark);
   }
 
   & input[type="submit"] {
