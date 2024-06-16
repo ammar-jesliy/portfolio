@@ -865,7 +865,8 @@
           stagger: 0.1,
         });
 
-        gsap.from(".footer", {
+        // The below does not work on certain IOS devices
+        gsap.from(".footer-content", {
           scrollTrigger: {
             trigger: ".content",
             start: "bottom bottom",
@@ -873,7 +874,6 @@
             scrub: 1,
           },
           y: -100,
-          willChange: 'transform'
         });
       });
     </script>

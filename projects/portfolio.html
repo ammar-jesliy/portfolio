@@ -14,7 +14,7 @@
       type="image/png"
       href="../src/images/portfolio-logo-icon.png"
     />
-    <link rel="stylesheet" href="../src/project.css">
+    <link rel="stylesheet" href="../src/project.css" />
     <link rel="stylesheet" href="../src/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,13 +73,68 @@
             <li class="menu-link inactive-link">
               <a href="../projects.html">projects.</a>
             </li>
-            <li class="menu-link inactive-link"><a href="../resume.html">resume.</a></li>
+            <li class="menu-link inactive-link">
+              <a href="../resume.html">resume.</a>
+            </li>
           </ul>
         </nav>
       </header>
 
       <section class="project">
-        <div class="project-content"></div>
+        <div class="project-content">
+          <div class="intro">
+            <div class="head">
+              <h2>portfolio</h2>
+              <p>2024</p>
+            </div>
+            <div class="intro-text">
+              <p>
+                My personal portfolio website. Designed and Developed
+                to showcase my projects and skills.
+              </p>
+
+              <div class="table">
+                <div class="row">
+                  <div class="label">Site</div>
+                  <div class="value"><a href="https://ammarjesliy.netlify.app/">ammarjesliy.com</a></div>
+                </div>
+                <div class="row">
+                  <div class="label">Source Code</div>
+                  <div class="value"><a href="#">Github</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="demo"></div>
+          </div>
+          <div class="details">
+            <div class="left">
+              <h3>Details</h3>
+              <p>
+                I created this portfolio website using HTML, CSS, and vanilla JavaScript. The design was crafted in Figma, ensuring a visually appealing layout. To enhance the user experience, I applied animations with GSAP.js and implemented smooth scrolling with Lenis.js. Additionally, I used ScrollTrigger from GSAP.js to create scroll-based animations and transitions. The website is fully responsive and optimized for different screen sizes and devices.
+              </p>
+            </div>
+            <div class="right">
+              <h3>Technologies used</h3>
+              <div class="cols">
+                <div class="col">
+                  <ul>
+                    <li>&bull; HTML</li>
+                    <li>&bull; CSS</li>
+                    <li>&bull; JavaScript</li>
+                    <li>&bull; Figma</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <ul>
+                    <li>&bull; Gsap</li>
+                    <li>&bull; Lenis</li>
+                    <li>&bull; ScrollTrigger</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -180,7 +235,7 @@
           0.5
         );
 
-        gsap.from(".footer", {
+        gsap.from(".footer-content", {
           scrollTrigger: {
             trigger: ".content",
             start: "bottom bottom",
