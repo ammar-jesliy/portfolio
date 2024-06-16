@@ -3,11 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore Ammar Jesliy's collection of web development and design projects, featuring creative solutions, interactive animations, and cutting-edge technologies. Discover the work of a passionate developer and designer."
-    />
-
     <meta name="theme-color" content="#101119" />
     <meta name="robots" content="index, follow" />
     <meta
@@ -17,23 +12,23 @@
     <link
       rel="icon"
       type="image/png"
-      href="src/images/portfolio-logo-icon.png"
+      href="../src/images/portfolio-logo-icon.png"
     />
-    <link rel="stylesheet" href="src/projects.css" />
-    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="../src/project.css" />
+    <link rel="stylesheet" href="../src/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
       rel="stylesheet"
     />
-    <title>Ammar Jesliy - Projects</title>
+    <title>Ammar Jesliy - Finance</title>
   </head>
   <body>
     <div class="content">
       <div class="bg"></div>
 
-      <a href="index.html" class="header-logo-shrinked">
+      <a href="../index.html" class="header-logo-shrinked">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1337"
@@ -73,174 +68,69 @@
           <button class="nav-toggle" onclick="toggleMenu()">Menu</button>
           <ul data-visible="false">
             <li class="menu-link inactive-link">
-              <a href="index.html">home.</a>
+              <a href="../index.html">home.</a>
             </li>
-            <li class="menu-link"><a href="projects.html">projects.</a></li>
             <li class="menu-link inactive-link">
-              <a href="resume.html">resume.</a>
+              <a href="../projects.html">projects.</a>
+            </li>
+            <li class="menu-link inactive-link">
+              <a href="../resume.html">resume.</a>
             </li>
           </ul>
         </nav>
       </header>
 
-      <section class="projects">
-        <div class="projects-content">
-          <a href="projects/portfolio.html" class="project">
+      <section class="project">
+        <div class="project-content">
+          <div class="intro">
             <div class="head">
-              <div class="text">
-                <div class="details">
-                  <h3>portfolio</h3>
-                  <p>HTML, CSS, JavaScript, GSAP</p>
+              <h2>finance</h2>
+              <p>2022</p>
+            </div>
+            <div class="intro-text">
+              <p>
+                A Stock Trading Web application.
+              </p>
+
+              <div class="table">
+                <div class="row">
+                  <div class="label">Site</div>
+                  <div class="value">none</div>
                 </div>
-                <p>My very first proper web project was my portfolio site</p>
-              </div>
-              <div class="btn">
-                <div class="arrow-anim">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+                <div class="row">
+                  <div class="label">Source Code</div>
+                  <div class="value"><a href="https://github.com/ammar-jesliy/finance">Github</a></div>
                 </div>
               </div>
             </div>
-            <div class="image">
-              <img
-                src="src/images/Portfolio-mockup.png"
-                alt="Portfolio home page"
-              />
+          </div>
+          <div class="details">
+            <div class="left">
+              <h3>Details</h3>
+              <p>
+                As part of Harvard's CS50x course, I created this stock trading web application using Flask and SQLite for a reliable backend and streamlined data management. HTML, CSS, and Jinja templating were employed to craft a user-friendly interface, enabling dynamic content rendering. I integrated the IEX API to fetch real-time stock prices, ensuring users have access to accurate market information.
+              </p>
             </div>
-          </a>
-          <a href="projects/cascade.html" class="project">
-            <div class="head">
-              <div class="text">
-                <div class="details">
-                  <h3>cascade</h3>
-                  <p>React, Tailwind, Appwrite, React-query</p>
+            <div class="right">
+              <h3>Technologies used</h3>
+              <div class="cols">
+                <div class="col">
+                  <ul>
+                    <li>&bull; Flask</li>
+                    <li>&bull; HTML</li>
+                    <li>&bull; CSS</li>
+                    <li>&bull; Jinja</li>
+                  </ul>
                 </div>
-                <p>A full stack task management web app</p>
-              </div>
-              <div class="btn">
-                <div class="arrow-anim">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+                <div class="col">
+                  <ul>
+                    <li>&bull; IEX API</li>
+                    <li>&bull; SQLite</li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="image">
-              <img
-                src="src/images/Cascade-mockup.png"
-                alt="cascade landing page"
-              />
-            </div>
-          </a>
-          <a href="projects/finance.html" class="project">
-            <div class="head">
-              <div class="text">
-                <div class="details">
-                  <h3>finance</h3>
-                  <p>Flask, HTML, CSS, SQLite, IEX API</p>
-                </div>
-                <p>A web app for stock trading in a simulated environment</p>
-              </div>
-              <div class="btn">
-                <div class="arrow-anim">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="image">
-              <img src="src/images/Finance-mockup.png" alt="finance app page" />
-            </div>
-          </a>
+          </div>
         </div>
       </section>
     </div>
@@ -304,7 +194,7 @@
       requestAnimationFrame(raf);
     </script>
 
-    <!-- Gsap animation script tags -->
+    <!-- Gsap animations script tag -->
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         gsap.registerPlugin(ScrollTrigger);
@@ -341,17 +231,8 @@
           },
           0.5
         );
-        timeline.from(
-          ".projects-content",
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.5,
-          },
-          0.5
-        );
 
-        gsap.from(".footer", {
+        gsap.from(".footer-content", {
           scrollTrigger: {
             trigger: ".content",
             start: "bottom bottom",
@@ -363,6 +244,6 @@
       });
     </script>
 
-    <script src="script.js" defer></script>
+    <script src="../script.js" defer></script>
   </body>
 </html>

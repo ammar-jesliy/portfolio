@@ -2,7 +2,6 @@
   color-scheme: dark;
   --clr-bg: #1d1e24;
   --clr-text-primary: #fff;
-  --clr-text-grey: #ffffff88;
   --clr-text-secondary: #000;
   --clr-bg-bento-dark: #30333a;
   --clr-bg-bento-light: #8d99ae;
@@ -58,7 +57,7 @@
       display: flex;
       gap: 40px;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
 
       @media (max-width: 780px) {
         & {
@@ -90,12 +89,16 @@
           display: flex;
           justify-content: space-between;
           border-bottom: solid 1px var(--clr-accent);
-          padding-block: 20px;
+          padding-bottom: 20px;
 
           & .label {
             font-weight: 400;
             color: var(--clr-accent)
           }
+        }
+
+        & .row:nth-child(2) {
+          padding-top: 20px;
         }
 
         & .row:nth-child(1) a {
@@ -148,6 +151,7 @@
 
       & .cols {
         display: flex;
+        gap: 10px;
         justify-content: space-around;
 
         @media (max-width: 780px) {
