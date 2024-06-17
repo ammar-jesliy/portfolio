@@ -400,87 +400,91 @@
         <div class="portfolio-content">
           <div class="left-col bento-item">
             <p>I Create & Craft ideas.</p>
-            <a class="button" href="projects.html">
-              <p>See my work</p>
-              <div class="arrow">
-                <div class="arrow-anim">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+            <div class="button-container magnetic">
+              <a class="button" href="projects.html">
+                <p>See my work</p>
+                <div class="arrow">
+                  <div class="arrow-anim">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        id="arrow"
+                        d="M2 22L22 2M22 2H7M22 2V17"
+                        stroke="#1E1E1E"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        id="arrow"
+                        d="M2 22L22 2M22 2H7M22 2V17"
+                        stroke="#1E1E1E"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
           <div class="right-col bento-item">
             <p>Explore my professional profile.</p>
-            <a class="button" href="resume.html">
-              <p>My resume</p>
-              <div class="arrow">
-                <div class="arrow-anim">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="arrow"
-                      d="M2 22L22 2M22 2H7M22 2V17"
-                      stroke="#1E1E1E"
-                      stroke-width="4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+            <div class="button-container magnetic">
+              <a class="button" href="resume.html">
+                <p>My resume</p>
+                <div class="arrow">
+                  <div class="arrow-anim">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        id="arrow"
+                        d="M2 22L22 2M22 2H7M22 2V17"
+                        stroke="#1E1E1E"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        id="arrow"
+                        d="M2 22L22 2M22 2H7M22 2V17"
+                        stroke="#1E1E1E"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -799,41 +803,34 @@
           });
         });
 
-        // Special handling for the last card
-        const lastCardText = lastCard.querySelector(".lg-text"); // Select the text element inside the last card
-        const fadeDuration = 3; // Adjust the duration for the fade effect as needed
+        // // Special handling for the last card
+        // const lastCardText = lastCard.querySelector(".lg-text"); // Select the text element inside the last card
+        // const fadeDuration = 3; // Adjust the duration for the fade effect as needed
 
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: lastCard,
-              start: "top top",
-              end: "bottom top",
-              scrub: 1,
-              pin: true,
-              pinSpacing: false,
-            },
-          })
-          .to(lastCardText, {
-            scale: 30, // Scale to cover the screen
-            duration: fadeDuration,
-          })
-          .to(
-            lastCard,
-            {
-              scale: 10,
-              duration: fadeDuration,
-            },
-            0
-          );
-        // .from(
-        //   next,
-        //   {
-        //     opacity: 0,
+        // gsap
+        //   .timeline({
+        //     scrollTrigger: {
+        //       trigger: lastCard,
+        //       start: "top top",
+        //       end: "bottom top",
+        //       scrub: 1,
+        //       pin: true,
+        //       pinSpacing: false,
+        //     },
+        //   })
+        //   .to(lastCardText, {
+        //     scale: 30, // Scale to cover the screen
         //     duration: fadeDuration,
-        //   },
-        //   `-=${fadeDuration}`
-        // );
+        //   })
+        //   .to(
+        //     lastCard,
+        //     {
+        //       scale: 10,
+        //       duration: fadeDuration,
+        //     },
+        //     0
+        //   );
+
 
         gsap.from(".about-content > div", {
           scrollTrigger: {

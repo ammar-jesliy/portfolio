@@ -309,7 +309,7 @@ svg {
       padding-bottom: 120px;
 
       & a {
-        background-color: var(--clr-bg-bento-dark);
+        background-color: var(--clr-bg);
         color: var(--clr-bg-bento-light);
         padding: 1rem 2rem;
         border-radius: 16px;
