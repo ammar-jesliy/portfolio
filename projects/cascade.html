@@ -97,7 +97,9 @@
                 <div class="row">
                   <div class="label">Site</div>
                   <div class="value">
-                    <a href="#" target="_blank">cascade.netlify.app</a>
+                    <a href="https://cascadetask.netlify.app/" target="_blank">
+                      cascadetask.netlify.app
+                    </a>
                   </div>
                 </div>
                 <div class="row">
@@ -260,40 +262,6 @@
         //   },
         //   y: -100,
         // });
-
-
-        // magnetic button effect
-        // from via: https://codepen.io/tdesero/pen/RmoxQg
-        var magnets = document.querySelectorAll(".magnetic");
-        var strength = 50;
-
-        magnets.forEach((magnet) => {
-          magnet.addEventListener("mousemove", moveMagnet);
-          magnet.addEventListener("mouseout", function (event) {
-            TweenMax.to(event.currentTarget, 1, {
-              x: 0,
-              y: 0,
-              ease: Elastic.easeOut,
-            });
-          });
-        });
-
-        function moveMagnet(event) {
-          var magnetButton = event.currentTarget;
-          var bounding = magnetButton.getBoundingClientRect();
-
-          TweenMax.to(magnetButton, 1, {
-            x:
-              ((event.clientX - bounding.left) / magnetButton.offsetWidth -
-                0.5) *
-              strength,
-            y:
-              ((event.clientY - bounding.top) / magnetButton.offsetHeight -
-                0.5) *
-              strength,
-            ease: Power4.easeOut,
-          });
-        }
       });
     </script>
 

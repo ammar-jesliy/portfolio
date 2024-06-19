@@ -672,6 +672,10 @@
     font-weight: 700;
   }
 
+  & .button-container {
+    margin-top: 100px;
+  }
+
   @media (max-width: 780px) {
     & {
       padding: 2rem 1.5rem;
@@ -690,7 +694,6 @@
   justify-content: space-around;
   padding-block: 12px;
   cursor: pointer;
-  margin-top: 100px;
 
   & p {
     font-size: clamp(16px, 3vw, 32px);
