@@ -831,7 +831,6 @@
         //     0
         //   );
 
-
         gsap.from(".about-content > div", {
           scrollTrigger: {
             trigger: ".about",
@@ -878,8 +877,6 @@
         //   },
         //   y: -100,
         // });
-
-        
       });
     </script>
 
@@ -991,30 +988,12 @@
         enableScrolling();
       }, 5500); // Adjust time as per your preloader animation duration
 
-
-      // Refresh page on resize to set scrolltriggers properly
-      function debounce(func, wait) {
-        let timeout;
-        return function (...args) {
-          clearTimeout(timeout);
-          timeout = setTimeout(() => func.apply(this, args), wait);
-        };
-      }
-
-      function handleResize() {
-        // Refresh the page
+      // reload page on orientation change to reset scrollTriggers
+      function handleOrientationChange() {
         location.reload();
       }
 
-      window.addEventListener('resize', debounce(handleResize, 500));
-
-      // function handleOrientationChange() {
-      //   location.reload();
-      // }
-
-      // window.addEventListener('orientationchange', handleOrientationChange);
-
-
+      window.addEventListener("orientationchange", handleOrientationChange);
     </script>
 
     <script src="script.js"></script>
