@@ -2,20 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ammarjesliy.netlify.app/index.html</loc>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ammarjesliy.netlify.app/projects.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ammarjesliy.netlify.app/resume.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ammarjesliy.netlify.app/projects/cascade.html</loc>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ammarjesliy.netlify.app/projects/portfolio.html</loc>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ammarjesliy.netlify.app/projects/finance.html</loc>
+    <priority>0.5</priority>
   </url>
 </urlset>
