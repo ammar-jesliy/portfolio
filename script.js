@@ -42,7 +42,9 @@ if (!isTouchDevice()) {
   });
 
   document
-    .querySelectorAll("p, h1, h2, h3, .hero-text, .nav-toggle")
+    .querySelectorAll(
+      "p, h1, h2, h3, .hero-text, .nav-toggle, .contact, .download-btn"
+    )
     .forEach((p) => {
       p.addEventListener("mouseenter", () => {
         cursor.classList.add("hover");
@@ -68,7 +70,9 @@ if (!isTouchDevice()) {
   });
 
   document
-    .querySelectorAll("a:not(.header-logo, .header-logo-shrinked)")
+    .querySelectorAll(
+      "a:not(.header-logo, .header-logo-shrinked, .contact, .download-btn)"
+    )
     .forEach((p) => {
       p.addEventListener("mouseenter", () => {
         cursor.classList.add("hover-link");
@@ -115,12 +119,17 @@ if (!isTouchDevice()) {
   cursor.style.display = "none";
 }
 
+// Time
 const timeZone = "Asia/Colombo";
 
-const now = new Date().toLocaleTimeString("en-US", {timeZone, hour: "2-digit", minute: "numeric", hour12: true});
+const now = new Date().toLocaleTimeString("en-US", {
+  timeZone,
+  hour: "2-digit",
+  minute: "numeric",
+  hour12: true,
+});
 
 document.querySelector(".time p").innerHTML = `${now} GMT+5:30`;
-
 
 // magnetic button effect
 // from via: https://codepen.io/tdesero/pen/RmoxQg
@@ -144,12 +153,10 @@ function moveMagnet(event) {
 
   TweenMax.to(magnetButton, 1, {
     x:
-      ((event.clientX - bounding.left) / magnetButton.offsetWidth -
-        0.5) *
+      ((event.clientX - bounding.left) / magnetButton.offsetWidth - 0.5) *
       strength,
     y:
-      ((event.clientY - bounding.top) / magnetButton.offsetHeight -
-        0.5) *
+      ((event.clientY - bounding.top) / magnetButton.offsetHeight - 0.5) *
       strength,
     ease: Power4.easeOut,
   });

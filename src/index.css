@@ -163,7 +163,7 @@
       justify-content: center;
 
       & .lg-text {
-        font-size: clamp(52px, 10vw, 100px);
+        font-size: clamp(42px, 10vw, 64px);
         font-weight: 700;
         color: var(--clr-bg);
         transform-origin: 46.6% 72%;
