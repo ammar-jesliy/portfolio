@@ -127,49 +127,45 @@
 /* ========================== Projects section =======================*/
 
 .projects {
-  height: 370vh;
+  height: 280vh;
   width: 100vw;
   position: relative;
 
   & .heading {
     height: 90vh;
     width: 100vw;
+
+    & .text {
+      position: absolute;
+      width: 100%;
+      top: 50vh;
+      left: 50vw;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 80%;
+
+
+      & h2 {
+        font-size: clamp(52px, 15vw, 100px);
+        line-height: 95%;
+      }
+
+      & p {
+        font-size: clamp(18px, 2vw, 24px);
+        font-weight: 400;
+        color: var(--clr-bg-bento-light);
+      
+      }
+    }
   }
+
   & .card {
     height: 90vh;
     width: 100vw;
   }
 
-  & h2 {
-    position: absolute;
-    width: 100%;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    max-width: 80%;
-    font-size: clamp(52px, 15vw, 100px);
-  }
-
   & .card.scroll {
     position: relative;
-
-    & .img {
-      height: calc(50vh + 200px);
-      background-color: var(--clr-bg-bento-light);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      & .lg-text {
-        font-size: clamp(42px, 10vw, 64px);
-        font-weight: 700;
-        color: var(--clr-bg);
-        transform-origin: 46.6% 72%;
-        text-align: center;
-      }
-    }
   }
 
   & .img {
@@ -302,6 +298,19 @@
       }
     }
   }
+
+  .more {
+    width: 90%;
+    max-width: 1000px;
+    margin-inline: auto;
+    background-color: var(--clr-bg-bento-light);
+    border-radius: var(--bento-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    position: relative;
+  }
 }
 
 .projects .img:hover .arrow-anim {
@@ -323,8 +332,8 @@
 /* =================== about section ======================*/
 
 .about {
-  height: 100vh;
-  padding: 2rem 3rem 2rem 3rem;
+  height: fit-content;
+  padding: 2rem 3rem var(--bento-gap) 3rem;
   align-content: center;
 
   @media (max-height: 575px) {
@@ -616,8 +625,8 @@
 /* =================== portfolio section ====================*/
 
 .portfolio {
-  height: 100vh;
-  padding: 2rem 3rem 2rem 3rem;
+  height: fit-content;
+  padding: 0 3rem var(--bento-gap) 3rem;
   align-content: center;
 
   @media (max-height: 575px) {
@@ -748,14 +757,14 @@
 /* ======================= contact section ==================*/
 
 .contact {
-  height: 100vh;
-  padding: 2rem 3rem 2rem 3rem;
+  height: fit-content;
+  padding: 0 3rem 2rem 3rem;
   align-content: center;
 
   @media (max-width: 780px) {
     & {
       height: fit-content;
-      padding: 0 1rem var(--bento-gap) 1rem;
+      padding: 0 1rem 2rem 1rem;
     }
   }
 
@@ -950,6 +959,7 @@
     }
   }
 }
+
 
 /* ========================= preloader ===================== */
 

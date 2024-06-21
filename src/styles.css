@@ -8,8 +8,8 @@
   --clr-accent: #5a5e66;
   --clr-accent-2: #5e4ae3;
 
-  --bento-border-radius: 28px;
-  --bento-gap: 16px;
+  --bento-border-radius: 20px;
+  --bento-gap: 14px;
 
   --content-max-width: 1000px;
 }
@@ -322,13 +322,14 @@ svg {
 
       & h4 {
         color: var(--clr-accent);
-        font-size: 14px;
+        font-size: 12px;
+        margin-bottom: 10px;
       }
 
       & p,
       a {
-        font-size: 18px;
-        font-weight: 400;
+        font-size: 15px;
+        font-weight: 500;
         color: var(--clr-text-secondary);
       }
 

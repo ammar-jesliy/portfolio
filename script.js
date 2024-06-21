@@ -43,7 +43,7 @@ if (!isTouchDevice()) {
 
   document
     .querySelectorAll(
-      "p, h1, h2, h3, .hero-text, .nav-toggle, .contact, .download-btn"
+      "p, h1, h2, h3, .hero-text, .nav-toggle, .email-btn a, .download-btn"
     )
     .forEach((p) => {
       p.addEventListener("mouseenter", () => {

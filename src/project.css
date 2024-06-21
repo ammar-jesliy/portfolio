@@ -8,8 +8,8 @@
   --clr-accent: #5a5e66;
   --clr-accent-2: #5e4ae3;
 
-  --bento-border-radius: 28px;
-  --bento-gap: 16px;
+  --bento-border-radius: 20px;
+  --bento-gap: 14px;
 
   --content-max-width: 1000px;
   --project-max-width: 1400px;
@@ -186,6 +186,8 @@
   }
 
   & .images {
+    max-width: 900px;
+    margin-inline: auto;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
