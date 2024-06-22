@@ -2,13 +2,18 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-113BY5SNMJ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-113BY5SNMJ"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-113BY5SNMJ');
+      gtag("config", "G-113BY5SNMJ");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -595,7 +600,6 @@
           </div>
         </div>
       </section>
-      
     </div>
 
     <div class="spacer-transparent"></div>
@@ -1029,12 +1033,18 @@
         enableScrolling();
       }, 5500); // Adjust time as per your preloader animation duration
 
-      // reload page on orientation change to reset scrollTriggers
-      function handleOrientationChange() {
-        location.reload();
-      }
+      // Reload on resize to reset scroll triggers
+      let initialWidth = window.innerWidth;
+      let initialHeight = window.innerHeight;
 
-      window.addEventListener("orientationchange", handleOrientationChange);
+      window.addEventListener("resize", () => {
+        let currentWidth = window.innerWidth;
+        let currentHeight = window.innerHeight;
+
+        if (Math.abs(currentWidth - initialWidth) > 100 || Math.abs(currentHeight - initialHeight) > 100 ) {
+          location.reload();
+        }
+      });
     </script>
 
     <script src="script.js"></script>
