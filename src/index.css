@@ -336,19 +336,6 @@
   padding: 2rem 3rem var(--bento-gap) 3rem;
   align-content: center;
 
-  @media (max-height: 575px) {
-    & {
-      height: fit-content;
-      margin-bottom: 50px;
-    }
-  }
-
-  @media (min-width: 1800px) {
-    & {
-      height: fit-content;
-      margin-bottom: 200px;
-    }
-  }
 }
 
 .about-content {
@@ -628,20 +615,6 @@
   height: fit-content;
   padding: 0 3rem var(--bento-gap) 3rem;
   align-content: center;
-
-  @media (max-height: 575px) {
-    & {
-      height: fit-content;
-      margin-bottom: 50px;
-    }
-  }
-
-  @media (min-width: 1800px) {
-    & {
-      height: fit-content;
-      margin-bottom: 200px;
-    }
-  }
 }
 
 @media (max-width: 780px) {
@@ -758,27 +731,13 @@
 
 .contact {
   height: fit-content;
-  padding: 0 3rem 2rem 3rem;
+  padding: 0 3rem 4rem 3rem;
   align-content: center;
 
   @media (max-width: 780px) {
     & {
       height: fit-content;
       padding: 0 1rem 2rem 1rem;
-    }
-  }
-
-  @media (max-height: 575px) {
-    & {
-      height: fit-content;
-      margin-bottom: 50px;
-    }
-  }
-
-  @media (min-width: 1800px) {
-    & {
-      height: fit-content;
-      margin-bottom: 200px;
     }
   }
 }

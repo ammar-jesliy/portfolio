@@ -373,9 +373,3 @@ svg {
     width: 100% !important;
   }
 }
-
-@media (max-height: 575px) {
-  .footer {
-    height: 80vh;
-  }
-}
