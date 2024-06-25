@@ -2,13 +2,18 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-113BY5SNMJ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-113BY5SNMJ"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-113BY5SNMJ');
+      gtag("config", "G-113BY5SNMJ");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -127,14 +132,18 @@
 
       <section class="projects">
         <div class="projects-content">
-          <a href="projects/portfolio.html" class="project">
+          <h2>Ongoing (1)</h2>
+          <div class="project ongoing">
+            <div class="image">
+              <img src="src/images/portli-og-image.png" alt="Portli" />
+            </div>
             <div class="head">
               <div class="text">
                 <div class="details">
-                  <h3>portfolio</h3>
-                  <p>HTML, CSS, JavaScript, GSAP</p>
+                  <h3>portli</h3>
+                  <p>Next.js, PostgreSQL, Drizzle, Tailwind</p>
                 </div>
-                <p>My very first proper web project was my portfolio site</p>
+                <p>A full stack, micro site builder web app</p>
               </div>
               <div class="btn">
                 <div class="arrow-anim">
@@ -173,14 +182,69 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="divider"></div>
+          <h2>Completed (3)</h2>
+          <a href="projects/portfolio.html" class="project">
             <div class="image">
               <img
                 src="src/images/Portfolio-mockup.png"
                 alt="Portfolio home page"
               />
             </div>
+            <div class="head">
+              <div class="text">
+                <div class="details">
+                  <h3>portfolio</h3>
+                  <p>HTML, CSS, JavaScript, GSAP</p>
+                </div>
+                <p>A portfolio website to showcase my projects and skills</p>
+              </div>
+              <div class="btn">
+                <div class="arrow-anim">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      id="arrow"
+                      d="M2 22L22 2M22 2H7M22 2V17"
+                      stroke="#1E1E1E"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      id="arrow"
+                      d="M2 22L22 2M22 2H7M22 2V17"
+                      stroke="#1E1E1E"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </a>
           <a href="projects/cascade.html" class="project">
+            <div class="image">
+              <img
+                src="src/images/Cascade-mockup.png"
+                alt="cascade landing page"
+              />
+            </div>
             <div class="head">
               <div class="text">
                 <div class="details">
@@ -226,14 +290,11 @@
                 </div>
               </div>
             </div>
-            <div class="image">
-              <img
-                src="src/images/Cascade-mockup.png"
-                alt="cascade landing page"
-              />
-            </div>
           </a>
           <a href="projects/finance.html" class="project">
+            <div class="image">
+              <img src="src/images/Finance-mockup.png" alt="finance app page" />
+            </div>
             <div class="head">
               <div class="text">
                 <div class="details">
@@ -279,10 +340,8 @@
                 </div>
               </div>
             </div>
-            <div class="image">
-              <img src="src/images/Finance-mockup.png" alt="finance app page" />
-            </div>
           </a>
+          <div class="divider"></div>
         </div>
       </section>
     </div>

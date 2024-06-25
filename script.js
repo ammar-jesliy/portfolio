@@ -100,7 +100,11 @@ if (!isTouchDevice()) {
     .forEach((p) => {
       p.addEventListener("mouseenter", () => {
         cursor.classList.add("hover-project");
-        cursorText.innerHTML = "view.";
+        if (p.classList.contains("ongoing")) {
+          cursorText.innerHTML = "Soon.";
+        } else {
+          cursorText.innerHTML = "view.";
+        }
       });
       p.addEventListener("mouseleave", () => {
         cursor.classList.remove("hover-project");
