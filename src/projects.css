@@ -43,15 +43,9 @@
 .projects-content {
   & h2 {
     width: fit-content;
-    font-size: 36px;
+    font-size: clamp(26px, 3vw, 32px);
     font-weight: 500;
     color: var(--clr-bg-bento-light);
-  }
-
-  & .divider {
-    height: 3px;
-    width: 100%;
-    background-color: var(--clr-accent);
   }
 
   & .project {
@@ -70,7 +64,9 @@
 
     & .head {
       width: 60%;
-      padding: 20px;
+      padding: 12px;
+      padding-inline: 25px;
+      padding-bottom: 20px;
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
@@ -88,11 +84,11 @@
           flex: 4;
 
           & h3 {
-            font-size: 40px;
+            font-size: clamp(30px, 4vw, 40px);
           }
 
           & p {
-            font-size: clamp(16px, 1.5vw, 18px);
+            font-size: clamp(14px, 1.5vw, 16px);
             font-weight: 400;
             color: var(--clr-bg-bento-light);
           }
@@ -100,8 +96,10 @@
 
         & > p {
           flex: 6;
-          font-size: clamp(18px, 2vw, 24px);
-          font-weight: 500;
+          font-size: clamp(18px, 2vw, 22px);
+          font-weight: 400;
+          color: var(--clr-text-primary);
+          line-height: 110%;
         }
 
         @media (max-width: 767px) {
@@ -155,6 +153,7 @@
           width: 100%;
           flex-wrap: wrap;
           align-items: center;
+          padding-inline: 15px;
           justify-content: space-between;
         }
       }
