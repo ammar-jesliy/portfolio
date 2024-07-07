@@ -48,6 +48,10 @@
     color: var(--clr-bg-bento-light);
   }
 
+  & .spacer {
+    height: 30px;
+  }
+
   & .project {
     max-width: 1000px;
     background-color: var(--clr-bg-bento-dark);
