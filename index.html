@@ -755,7 +755,7 @@
         gsap.to(".blinder", {
           scaleY: 0,
           stagger: 0.1,
-          delay: 3.8,
+          delay: 2.8,
           ease: "power4.inOut",
         });
 
@@ -767,7 +767,7 @@
           ease: "expo.out",
           stagger: 0.2,
           duration: 1,
-          delay: 4.2,
+          delay: 3.2,
         });
         timelineHero.from(
           links,
@@ -777,7 +777,7 @@
             stagger: 0.1,
             duration: 0.3,
           },
-          4.7
+          3.7
         );
         timelineHero.from(
           ".hero-text p",
@@ -786,7 +786,7 @@
             opacity: 0,
             stagger: 0.05,
           },
-          4.7
+          3.7
         );
         timelineHero.from(
           navToggle,
@@ -795,7 +795,7 @@
             opacity: 0,
             duration: 0.3,
           },
-          4.7
+          3.7
         );
 
         gsap.to(".hero-text .design", {
@@ -969,25 +969,24 @@
           {
             strokeDashoffset: 0,
             ease: "power1.out",
-            duration: 2, // Duration for the first segment
-            delay: 0.5,
+            duration: 1.7, // Duration for the first segment
+            delay: 0.3,
           },
           0
         )
         .to(linePath, {
-          delay: 0.5,
+          delay: 0.2,
           strokeDashoffset: 0,
           ease: "power1.out",
-          duration: 1,
+          duration: 0.7,
         })
         .to(
           [linePath, signaturePath],
           {
             opacity: 0,
-            duration: 0.25,
-            y: -30,
+            duration: 0.5,
           },
-          3.5
+          2.5
         )
         .to(
           ".word-1 p",
@@ -995,7 +994,7 @@
             y: -10,
             opacity: 0,
           },
-          2.8
+          2
         )
         .to(
           ".word-2 p",
@@ -1003,7 +1002,7 @@
             y: -10,
             opacity: 0,
           },
-          2.8
+          2
         );
     </script>
 

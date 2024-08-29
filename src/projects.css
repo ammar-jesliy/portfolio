@@ -157,7 +157,7 @@
           width: 100%;
           flex-wrap: wrap;
           align-items: center;
-          padding-inline: 15px;
+          padding-inline: 10px;
           justify-content: space-between;
         }
       }
