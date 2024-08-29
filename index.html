@@ -730,7 +730,7 @@
         duration: 1, // Increase duration for slower scrolling
         easing: (t) => t * (2 - t), // Custom easing function for smoother effect
         smooth: true, // Enable smooth scrolling
-        wheelMultiplier: 0.65,
+        wheelMultiplier: 0.85,
       });
 
       lenis.on("scroll", (e) => {});
@@ -1028,7 +1028,7 @@
 
         // Enable scrolling
         enableScrolling();
-      }, 5500); // Adjust time as per your preloader animation duration
+      }, 4500); // Adjust time as per your preloader animation duration
 
       // Reload on resize to reset scroll triggers
       let initialWidth = window.innerWidth;
