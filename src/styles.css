@@ -123,6 +123,7 @@ body {
   background-color: var(--clr-text-primary);
   opacity: 0.5;
   align-content: center;
+  transition: all 0.1s ease;
   text-align: center;
 }
 
